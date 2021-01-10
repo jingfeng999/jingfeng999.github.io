@@ -5,25 +5,28 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://example.com">
-  <title>Hexo</title>
+  <link rel="dns-prefetch" href="https://jingfeng999.github.io">
+  <title>熟悉而陌生的面向对象(一) | 靖枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="熟悉而陌生的面向对象(一)  初写博客的小白前言​        这是我的第一篇文章，我将会好好的全面剖析到底什么是面向对象。我相信大多数人在初学编程时，都是先学习的面向过程的编程方式，如C语言，这是众多大学在计算机学科开设的第一门编程语言专业课。我的大学亦是如此，当然大多数大学开设这门学科的目的不是让大家深入学习C语言的精髓-指针，而是以C语言为工具，让大家学习变量，各种操作符，if-else条">
+  <meta name="description" content="本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="熟悉而陌生的面向对象(一)  初写博客的小白前言​        这是我的第一篇文章，我将会好好的全面剖析到底什么是面向对象。我相信大多数人在初学编程时，都是先学习的面向过程的编程方式，如C语言，这是众多大学在计算机学科开设的第一门编程语言专业课。我的大学亦是如此，当然大多数大学开设这门学科的目的不是让大家深入学习C语言的精髓-指针，而是以C语言为工具，让大家学习变量，各种操作符，if-else条">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-10T09:24:01.741Z">
-<meta property="article:modified_time" content="2021-01-10T09:37:47.434Z">
-<meta property="article:author" content="John Doe">
+<meta property="og:title" content="熟悉而陌生的面向对象(一)">
+<meta property="og:url" content="https://jingfeng999.github.io/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/index.html">
+<meta property="og:site_name" content="靖枫的博客">
+<meta property="og:description" content="本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://jingfeng999.github.io/imgs/machao.jpg">
+<meta property="article:published_time" content="2021-01-10T12:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-10T14:45:35.432Z">
+<meta property="article:author" content="靖枫">
+<meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://jingfeng999.github.io/imgs/machao.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="靖枫的博客" type="application/atom+xml">
   
   
-    <link rel="icon" href="/favicon.png">
+    <link rel="icon" href="/assets/imgs/favicon.jpg">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
@@ -47,10 +50,10 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/assets/imgs/avatarByJingfeng999.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/"></a></h1>
+		  <h1 class="header-author"><a href="/">靖枫</a></h1>
 		</hgroup>
 		
 
@@ -59,9 +62,14 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/tags/java/">java</a></li>
+	        
+				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
+		</nav>
+		<nav>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 1</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -81,15 +89,18 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+					<a class="qq" target="_blank" href="/assets/imgs/qq.jpg" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="weixin" target="_blank" href="/assets/imgs/wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="mail" target="_blank" href="mailto:1520069685@qq.com" title="mail"><i class="icon-mail"></i></a>
 		        
 			</div>
+			
+				<div style="position:absolute; bottom:120px left:auto; width:85%">
+					<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=255 height=80 src="//music.163.com/outchain/player?type=2&id=4875304&auto=1&height=32"></iframe>
+				</div>																									
+			
 		</nav>
 	</header>		
 </div>
@@ -105,13 +116,15 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/assets/imgs/avatarByJingfeng999.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author"></h1>
+			  <h1 class="header-author js-header-author">靖枫</h1>
 			</hgroup>
 			
 			
+			
+				
 			
 				
 			
@@ -122,24 +135,24 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
+						<a class="qq" target="_blank" href="/assets/imgs/qq.jpg" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="weixin" target="_blank" href="/assets/imgs/wx.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="mail" target="_blank" href="mailto:1520069685@qq.com" title="mail"><i class="icon-mail"></i></a>
 			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/java/">java</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -154,13 +167,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-熟悉而陌生的面向对象(一)" class="article article-type-post " itemscope itemprop="blogPost">
+            
+
+    <i class="fa fa-thumb-tack"></i>
+    <font color=7D26CD>置顶</font>
+    <span class="post-meta-divider">|</span>
+  
+
+<article id="post-熟悉而陌生的面向对象(一)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      熟悉而陌生的面向对象(一)
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+  <br/>
+  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+  <span class="icon-sort"></span>
+  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+  </span>
+  </a>
+  
+        
+        <a href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" class="archive-article-date">
+  	<time datetime="2021-01-10T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 align="center">熟悉而陌生的面向对象(一)</h1>
-
+        <blockquote>
+<p>本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明</p>
+</blockquote>
+<a id="more"></a>
 <h2 id="初写博客的小白前言"><a href="#初写博客的小白前言" class="headerlink" title="初写博客的小白前言"></a>初写博客的小白前言</h2><p>​        这是我的第一篇文章，我将会好好的全面剖析到底什么是<strong>面向对象</strong>。我相信大多数人在初学编程时，都是先学习的面向过程的编程方式，如C语言，这是众多大学在计算机学科开设的第一门编程语言专业课。我的大学亦是如此，当然大多数大学开设这门学科的目的不是让大家深入学习C语言的精髓-指针，而是以C语言为工具，让大家学习变量，各种操作符，if-else条件结构，循环结构，函数（也叫方法）等<strong>编程入门知识</strong>。</p>
 <p>​        就我个人而言，这些入门知识没有难到我，而真正让我头疼的就是下一个学期学习的C++，让我初识了面向对象。当时我学习面向对象时，我面临的最大的两个难点：<strong>1.更多复杂的语法 。 2.想不明白为啥要有面向对象这种东西。</strong></p>
 <p>​        语法复杂可以通过大量的练习来熟练记忆，但是到底什么是面向对象，是大多数人没法解释清楚的。前辈说过的一句话我记忆犹新：“面向对象是一种思想，你现在能体会到的只是语法表现出来的外壳，当你写过一些大规模程序后，你会对面向对象有不一样的理解，当你写了几年代码后，你又会对它有不一样的理解。”</p>
@@ -170,6 +217,7 @@
 <p>文章中的面向对象程序设计将以英文缩写<strong>OOP</strong>来表示。文章中涉及的代码均为Java代码，<strong>但是本文章谈的是面向对象思想，并非谈java语法</strong>，所以以理解为主，对于其他面向对象语言的学习者是能够阅读的。</p>
 <p>同时该话题内容过多，会被分成多篇文章发出，这只是第一篇~~~</p>
 </blockquote>
+<hr>
 <h2 id="1-抽象过程"><a href="#1-抽象过程" class="headerlink" title="1.抽象过程"></a>1.抽象过程</h2><p>​        所有编程语言都提供了<strong>抽象机制</strong>，什么是抽象，可以这样浅显的理解：就是将复杂难懂的东西经过概括总结变成一些易于理解的东西（可以这样理解：人们所能够解决的问题的复杂性直接取决于抽象的类型和质量，其中抽象的类型是指“所抽象的是什么”）。例如汇编语言就是对底层机器的轻微抽象，而C语言又是对汇编语言的抽象。<strong>C语言在汇编语言的基础上有了大幅的改进，但是它所作出的主要抽象仍然要求在解决问题时要基于计算机的结构，而并不是基于所要解决问题的本身结构来考虑。</strong>这就导致程序员必须要建立起在机器模型（解空间）和实际待解决问题模型（问题空间）之间的关联。（建立这种关联是费力的，是程序员需要做的，并非编程语言本身的功能，这就导致了程序难以编写，维护代价高昂等问题）</p>
 <blockquote>
 <p>这里解释两个名词：</p>
@@ -178,6 +226,7 @@
 </blockquote>
 <p>​        区别于类似于C语言的主要抽象，<strong>另一种是对机器建模的方式就是只针对于待解决问题本身建模</strong>。如早期的编程语言LISP，APL等（这里不详细描述其细节了），这种方式对于他们所要解决的特定类型的问题都是不错的解决方案，但是一旦超出其特定领域，就显得会力不从心。</p>
 <p>​        而OOP所提供的表示问题空间中元素的工具更为优秀，其表示方法非常通用，不会让程序员受限于任何特定类型的问题。我们将问题空间中的元素极其在解空间的表示称为”对象“。<strong>这种思想的实质是：程序可以通过添加新类型的对象使自身适用于某个特定问题。</strong>所以，OOP允许根据问题来描述问题，而不是总是根据计算机来描述问题。</p>
+<hr>
 <h2 id="2-面向对象语言的特点"><a href="#2-面向对象语言的特点" class="headerlink" title="2.面向对象语言的特点"></a>2.面向对象语言的特点</h2><blockquote>
 <p>这里介绍一个编程语言Smalltalk，它仍被认为是最具有代表性的面向对象语言，也是Java所基于的语言之一，其作者Alan Kay总结了面向对象语言的5个基本特性：</p>
 <ul>
@@ -189,15 +238,17 @@
 </ul>
 </blockquote>
 <p>​        对于对象还有一个更加简洁的描述：<strong>对象具有状态，行为和标识（每个对象都有属性，方法，和内存中唯一的地址）</strong>。</p>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<hr>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="(^_^)结束语"></a>(^_^)结束语</h2><ul>
 <li><p>该文章通过抽象过程简述了面向对象的特性和优点，当然也可以理解为从面向过程到面向对象的转变，后续还会继续聊这个话题。</p>
 </li>
 <li><p>不可将文章中面向对象语言的5个基本特征与封装，继承，多态混为一谈。前者是在直接描述对象的概念和本质，后者描述的是面向对象的好处，面向对象的三大特征后续还会继续详细描述。</p>
-<p>  ​        虽然这是自己的第一篇博客，但是我选择了这么庞大的话题，难度虽不小，但是我会尽力完成，会将我查看的文献和书籍中的精华部分提取出来展现到文章中，为了将OOP尽可能的讲述清楚且不出错，避免不了要引用一些书籍上的内容，当然，为了更好的理解，还会加上自己的一些理解（比如文章中某些生硬的概念在Java中的体现）。</p>
-<p>  ​        后续还会发布熟悉而陌生的面向对象(二)，（三）…..并且某些部分还会结合Java代码做出解释。</p>
-<p>  ​        感谢你的阅读！！！</p>
 </li>
 </ul>
+<blockquote>
+<p>虽然这是自己的第一篇博客，但是我选择了这么庞大的话题，难度虽不小，但是我会尽力完成，会将我查看的文献和书籍中的精华部分提取出来展现到文章中，为了将OOP尽可能的讲述清楚且不出错，避免不了要引用一些书籍上的内容，当然，为了更好的理解，还会加上自己的一些理解（比如文章中某些生硬的概念在Java中的体现）。后续还会发布熟悉而陌生的面向对象(二)，（三）…..并且某些部分还会结合Java代码做出解释。​        </p>
+</blockquote>
+<p>感谢你的阅读！<strong>若文章中有错误的地方还请您多多包涵，麻烦联系一下我并说明，我会及时改正的！</strong><br><img src="/imgs/machao.jpg" alt="马超"></p>
 <p>​        </p>
 
       
@@ -215,6 +266,16 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/imgs/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/imgs/wxpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -227,7 +288,23 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -278,11 +355,12 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" alt="微信分享二维码">
     </div>
 </div>
 
 <div class="mask js-mask"></div>
+
       
       <div class="clearfix"></div>
     </div>
@@ -303,6 +381,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%86%99%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E7%99%BD%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">初写博客的小白前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%BD%E8%B1%A1%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">1.抽象过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">2.面向对象语言的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">(^_^)结束语</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -327,14 +418,18 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2021 John Doe
+    		&copy; 2021 靖枫
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
+		</div>
+		
     </div>
   </div>
 </footer>
+
+<!--页面点击小红心-->
+<script type="text/javascript" src="/love.js"></script>
     </div>
     <script>
 	var yiliaConfig = {
@@ -358,6 +453,9 @@ if(!isFinite(o.call(this)))throw RangeError("Invalid time value");var t=this,n=t
 return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var e=r(54),i=r(2),o=e.get,u=e.key;e.exp({getOwnMetadata:function(t,n){return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=r(32),u=e.has,c=e.key,f=function(t,n,r){if(u(t,n,r))return!0;var e=o(n);return null!==e&&f(t,e,r)};e.exp({hasMetadata:function(t,n){return f(t,i(n),arguments.length<3?void 0:c(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=e.has,u=e.key;e.exp({hasOwnMetadata:function(t,n){return o(t,i(n),arguments.length<3?void 0:u(arguments[2]))}})},function(t,n,r){var e=r(54),i=r(2),o=r(26),u=e.key,c=e.set;e.exp({metadata:function(t,n){return function(r,e){c(t,n,(void 0!==e?i:o)(r),u(e))}}})},function(t,n,r){var e=r(1);e(e.P+e.R,"Set",{toJSON:r(165)("Set")})},function(t,n,r){"use strict";var e=r(1),i=r(147)(!0);e(e.P,"String",{at:function(t){return i(this,t)}})},function(t,n,r){"use strict";var e=r(1),i=r(46),o=r(16),u=r(122),c=r(120),f=RegExp.prototype,a=function(t,n){this._r=t,this._s=n};r(139)(a,"RegExp String",function(){var t=this._r.exec(this._s);return{value:t,done:null===t}}),e(e.P,"String",{matchAll:function(t){if(i(this),!u(t))throw TypeError(t+" is not a regexp!");var n=String(this),r="flags"in f?String(t.flags):c.call(t),e=new RegExp(t.source,~r.indexOf("g")?r:"g"+r);return e.lastIndex=o(t.lastIndex),new a(e,n)}})},function(t,n,r){"use strict";var e=r(1),i=r(181);e(e.P,"String",{padEnd:function(t){return i(this,t,arguments.length>1?arguments[1]:void 0,!1)}})},function(t,n,r){"use strict";var e=r(1),i=r(181);e(e.P,"String",{padStart:function(t){return i(this,t,arguments.length>1?arguments[1]:void 0,!0)}})},function(t,n,r){"use strict";r(82)("trimLeft",function(t){return function(){return t(this,1)}},"trimStart")},function(t,n,r){"use strict";r(82)("trimRight",function(t){return function(){return t(this,2)}},"trimEnd")},function(t,n,r){r(153)("asyncIterator")},function(t,n,r){r(153)("observable")},function(t,n,r){var e=r(1);e(e.S,"System",{global:r(3)})},function(t,n,r){for(var e=r(155),i=r(28),o=r(3),u=r(27),c=r(80),f=r(7),a=f("iterator"),s=f("toStringTag"),l=c.Array,h=["NodeList","DOMTokenList","MediaList","StyleSheetList","CSSRuleList"],v=0;v<5;v++){var p,d=h[v],y=o[d],g=y&&y.prototype;if(g){g[a]||u(g,a,l),g[s]||u(g,s,d),c[d]=l;for(p in e)g[p]||i(g,p,e[p],!0)}}},function(t,n,r){var e=r(1),i=r(151);e(e.G+e.B,{setImmediate:i.set,clearImmediate:i.clear})},function(t,n,r){var e=r(3),i=r(1),o=r(121),u=r(207),c=e.navigator,f=!!c&&/MSIE .\./.test(c.userAgent),a=function(t){return f?function(n,r){return t(o(u,[].slice.call(arguments,2),"function"==typeof n?n:Function(n)),r)}:t};i(i.G+i.B+i.F*f,{setTimeout:a(e.setTimeout),setInterval:a(e.setInterval)})},function(t,n,r){r(330),r(269),r(271),r(270),r(273),r(275),r(280),r(274),r(272),r(282),r(281),r(277),r(278),r(276),r(268),r(279),r(283),r(284),r(236),r(238),r(237),r(286),r(285),r(256),r(266),r(267),r(257),r(258),r(259),r(260),r(261),r(262),r(263),r(264),r(265),r(239),r(240),r(241),r(242),r(243),r(244),r(245),r(246),r(247),r(248),r(249),r(250),r(251),r(252),r(253),r(254),r(255),r(317),r(322),r(329),r(320),r(312),r(313),r(318),r(323),r(325),r(308),r(309),r(310),r(311),r(314),r(315),r(316),r(319),r(321),r(324),r(326),r(327),r(328),r(231),r(233),r(232),r(235),r(234),r(220),r(218),r(224),r(221),r(227),r(229),r(217),r(223),r(214),r(228),r(212),r(226),r(225),r(219),r(222),r(211),r(213),r(216),r(215),r(230),r(155),r(302),r(307),r(184),r(303),r(304),r(305),r(306),r(287),r(183),r(185),r(186),r(342),r(331),r(332),r(337),r(340),r(341),r(335),r(338),r(336),r(339),r(333),r(334),r(288),r(289),r(290),r(291),r(292),r(295),r(293),r(294),r(296),r(297),r(298),r(299),r(301),r(300),r(343),r(369),r(372),r(371),r(373),r(374),r(370),r(375),r(376),r(354),r(357),r(353),r(351),r(352),r(355),r(356),r(346),r(368),r(377),r(345),r(347),r(349),r(348),r(350),r(359),r(360),r(362),r(361),r(364),r(363),r(365),r(366),r(367),r(344),r(358),r(380),r(379),r(378),t.exports=r(52)},function(t,n){function r(t,n){if("string"==typeof n)return t.insertAdjacentHTML("afterend",n);var r=t.nextSibling;return r?t.parentNode.insertBefore(n,r):t.parentNode.appendChild(n)}t.exports=r},,,,,,,,,function(t,n,r){(function(n,r){!function(n){"use strict";function e(t,n,r,e){var i=n&&n.prototype instanceof o?n:o,u=Object.create(i.prototype),c=new p(e||[]);return u._invoke=s(t,r,c),u}function i(t,n,r){try{return{type:"normal",arg:t.call(n,r)}}catch(t){return{type:"throw",arg:t}}}function o(){}function u(){}function c(){}function f(t){["next","throw","return"].forEach(function(n){t[n]=function(t){return this._invoke(n,t)}})}function a(t){function n(r,e,o,u){var c=i(t[r],t,e);if("throw"!==c.type){var f=c.arg,a=f.value;return a&&"object"==typeof a&&m.call(a,"__await")?Promise.resolve(a.__await).then(function(t){n("next",t,o,u)},function(t){n("throw",t,o,u)}):Promise.resolve(a).then(function(t){f.value=t,o(f)},u)}u(c.arg)}function e(t,r){function e(){return new Promise(function(e,i){n(t,r,e,i)})}return o=o?o.then(e,e):e()}"object"==typeof r&&r.domain&&(n=r.domain.bind(n));var o;this._invoke=e}function s(t,n,r){var e=P;return function(o,u){if(e===F)throw new Error("Generator is already running");if(e===M){if("throw"===o)throw u;return y()}for(r.method=o,r.arg=u;;){var c=r.delegate;if(c){var f=l(c,r);if(f){if(f===A)continue;return f}}if("next"===r.method)r.sent=r._sent=r.arg;else if("throw"===r.method){if(e===P)throw e=M,r.arg;r.dispatchException(r.arg)}else"return"===r.method&&r.abrupt("return",r.arg);e=F;var a=i(t,n,r);if("normal"===a.type){if(e=r.done?M:j,a.arg===A)continue;return{value:a.arg,done:r.done}}"throw"===a.type&&(e=M,r.method="throw",r.arg=a.arg)}}}function l(t,n){var r=t.iterator[n.method];if(r===g){if(n.delegate=null,"throw"===n.method){if(t.iterator.return&&(n.method="return",n.arg=g,l(t,n),"throw"===n.method))return A;n.method="throw",n.arg=new TypeError("The iterator does not provide a 'throw' method")}return A}var e=i(r,t.iterator,n.arg);if("throw"===e.type)return n.method="throw",n.arg=e.arg,n.delegate=null,A;var o=e.arg;return o?o.done?(n[t.resultName]=o.value,n.next=t.nextLoc,"return"!==n.method&&(n.method="next",n.arg=g),n.delegate=null,A):o:(n.method="throw",n.arg=new TypeError("iterator result is not an object"),n.delegate=null,A)}function h(t){var n={tryLoc:t[0]};1 in t&&(n.catchLoc=t[1]),2 in t&&(n.finallyLoc=t[2],n.afterLoc=t[3]),this.tryEntries.push(n)}function v(t){var n=t.completion||{};n.type="normal",delete n.arg,t.completion=n}function p(t){this.tryEntries=[{tryLoc:"root"}],t.forEach(h,this),this.reset(!0)}function d(t){if(t){var n=t[w];if(n)return n.call(t);if("function"==typeof t.next)return t;if(!isNaN(t.length)){var r=-1,e=function n(){for(;++r<t.length;)if(m.call(t,r))return n.value=t[r],n.done=!1,n;return n.value=g,n.done=!0,n};return e.next=e}}return{next:y}}function y(){return{value:g,done:!0}}var g,b=Object.prototype,m=b.hasOwnProperty,x="function"==typeof Symbol?Symbol:{},w=x.iterator||"@@iterator",S=x.asyncIterator||"@@asyncIterator",_=x.toStringTag||"@@toStringTag",O="object"==typeof t,E=n.regeneratorRuntime;if(E)return void(O&&(t.exports=E));E=n.regeneratorRuntime=O?t.exports:{},E.wrap=e;var P="suspendedStart",j="suspendedYield",F="executing",M="completed",A={},N={};N[w]=function(){return this};var T=Object.getPrototypeOf,I=T&&T(T(d([])));I&&I!==b&&m.call(I,w)&&(N=I);var k=c.prototype=o.prototype=Object.create(N);u.prototype=k.constructor=c,c.constructor=u,c[_]=u.displayName="GeneratorFunction",E.isGeneratorFunction=function(t){var n="function"==typeof t&&t.constructor;return!!n&&(n===u||"GeneratorFunction"===(n.displayName||n.name))},E.mark=function(t){return Object.setPrototypeOf?Object.setPrototypeOf(t,c):(t.__proto__=c,_ in t||(t[_]="GeneratorFunction")),t.prototype=Object.create(k),t},E.awrap=function(t){return{__await:t}},f(a.prototype),a.prototype[S]=function(){return this},E.AsyncIterator=a,E.async=function(t,n,r,i){var o=new a(e(t,n,r,i));return E.isGeneratorFunction(n)?o:o.next().then(function(t){return t.done?t.value:o.next()})},f(k),k[_]="Generator",k.toString=function(){return"[object Generator]"},E.keys=function(t){var n=[];for(var r in t)n.push(r);return n.reverse(),function r(){for(;n.length;){var e=n.pop();if(e in t)return r.value=e,r.done=!1,r}return r.done=!0,r}},E.values=d,p.prototype={constructor:p,reset:function(t){if(this.prev=0,this.next=0,this.sent=this._sent=g,this.done=!1,this.delegate=null,this.method="next",this.arg=g,this.tryEntries.forEach(v),!t)for(var n in this)"t"===n.charAt(0)&&m.call(this,n)&&!isNaN(+n.slice(1))&&(this[n]=g)},stop:function(){this.done=!0;var t=this.tryEntries[0],n=t.completion;if("throw"===n.type)throw n.arg;return this.rval},dispatchException:function(t){function n(n,e){return o.type="throw",o.arg=t,r.next=n,e&&(r.method="next",r.arg=g),!!e}if(this.done)throw t;for(var r=this,e=this.tryEntries.length-1;e>=0;--e){var i=this.tryEntries[e],o=i.completion;if("root"===i.tryLoc)return n("end");if(i.tryLoc<=this.prev){var u=m.call(i,"catchLoc"),c=m.call(i,"finallyLoc");if(u&&c){if(this.prev<i.catchLoc)return n(i.catchLoc,!0);if(this.prev<i.finallyLoc)return n(i.finallyLoc)}else if(u){if(this.prev<i.catchLoc)return n(i.catchLoc,!0)}else{if(!c)throw new Error("try statement without catch or finally");if(this.prev<i.finallyLoc)return n(i.finallyLoc)}}}},abrupt:function(t,n){for(var r=this.tryEntries.length-1;r>=0;--r){var e=this.tryEntries[r];if(e.tryLoc<=this.prev&&m.call(e,"finallyLoc")&&this.prev<e.finallyLoc){var i=e;break}}i&&("break"===t||"continue"===t)&&i.tryLoc<=n&&n<=i.finallyLoc&&(i=null);var o=i?i.completion:{};return o.type=t,o.arg=n,i?(this.method="next",this.next=i.finallyLoc,A):this.complete(o)},complete:function(t,n){if("throw"===t.type)throw t.arg;return"break"===t.type||"continue"===t.type?this.next=t.arg:"return"===t.type?(this.rval=this.arg=t.arg,this.method="return",this.next="end"):"normal"===t.type&&n&&(this.next=n),A},finish:function(t){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.finallyLoc===t)return this.complete(r.completion,r.afterLoc),v(r),A}},catch:function(t){for(var n=this.tryEntries.length-1;n>=0;--n){var r=this.tryEntries[n];if(r.tryLoc===t){var e=r.completion;if("throw"===e.type){var i=e.arg;v(r)}return i}}throw new Error("illegal catch attempt")},delegateYield:function(t,n,r){return this.delegate={iterator:d(t),resultName:n,nextLoc:r},"next"===this.method&&(this.arg=g),A}}}("object"==typeof n?n:"object"==typeof window?window:"object"==typeof self?self:this)}).call(n,function(){return this}(),r(158))}])</script><script src="/./main.0cf68a.js"></script><script>!function(){!function(e){var t=document.createElement("script");document.getElementsByTagName("body")[0].appendChild(t),t.setAttribute("src",e)}("/slider.e37972.js")}()</script>
 
 
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
     
 <div class="tools-col" q-class="show:isShow,hide:isShow|isFalse" q-on="click:stop(e)">
   <div class="tools-nav header-menu">
@@ -408,6 +506,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -458,7 +560,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://windsky125.gitee.io/blog/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>windsky125</a>
             </li>
           
             <li class="search-li">
@@ -563,5 +665,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/haru02.model.json"},"display":{"position":"left","width":145,"height":315,"hOffset":275,"vOffset":0},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8}});</script></body>
 </html>
