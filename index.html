@@ -152,88 +152,52 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-testBolg01" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-熟悉而陌生的面向对象(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/04/testBolg01/">Test Bolg 01</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/04/testBolg01/" class="archive-article-date">
-  	<time datetime="2021-01-04T04:37:12.935Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-04</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h1><p>这是一个段落  </p>
-<p>这是另一个段落  </p>
-<p><em>你好</em></p>
-<p><strong>你好</strong></p>
-<p><strong><em>你好</em></strong></p>
-<hr>
-<hr>
+        <h1 align="center">熟悉而陌生的面向对象(一)</h1>
+
+<h2 id="初写博客的小白前言"><a href="#初写博客的小白前言" class="headerlink" title="初写博客的小白前言"></a>初写博客的小白前言</h2><p>​        这是我的第一篇文章，我将会好好的全面剖析到底什么是**<em>面向对象**</em>。我相信大多数人在初学编程时，都是先学习的面向过程的编程方式，如C语言，这是众多大学在计算机学科开设的第一门编程语言专业课。我的大学亦是如此，当然大多数大学开设这门学科的目的不是让大家深入学习C语言的精髓-指针，而是以C语言为工具，让大家学习变量，各种操作符，if-else条件结构，循环结构，函数（也叫方法）等<strong>编程入门知识</strong>。</p>
+<p>​        就我个人而言，这些入门知识没有难到我，而真正让我头疼的就是下一个学期学习的C++，让我初识了面向对象。当时我学习面向对象时，我面临的最大的两个难点：<strong>1.更多复杂的语法 。 2.想不明白为啥要有面向对象这种东西。</strong></p>
+<p>​        语法复杂可以通过大量的练习来熟练记忆，但是到底什么是面向对象，是大多数人没法解释清楚的。前辈说过的一句话我记忆犹新：“面向对象是一种思想，你现在能体会到的只是语法表现出来的外壳，当你写过一些大规模程序后，你会对面向对象有不一样的理解，当你写了几年代码后，你又会对它有不一样的理解。”</p>
+<p>​        如今我作为一个Java学习者，也写过若干个中小型的项目，作为我的第一篇博客，我想聊一聊面向对象这个话题。我会以网上的一些文献和书籍为参考，并结合我个人的理解，聊一聊我眼中的面向对象。</p>
+<blockquote>
+<p>首先认识一个名词，**面向对象程序设计(Object-oriented Programming , OOP)**。</p>
+<p>文章中的面向对象程序设计将以英文缩写<strong>OOP</strong>来表示。文章中涉及的代码均为Java代码，<strong>但是本文章谈的是面向对象思想，并非谈java语法</strong>，所以以理解为主，对于其他面向对象语言的学习者是能够阅读的。</p>
+<p>同时该话题内容过多，会被分成多篇文章发出，这只是第一篇~~~</p>
+</blockquote>
+<p>##1.抽象过程</p>
+<p>​        所有编程语言都提供了<strong>抽象机制</strong>，什么是抽象，可以这样浅显的理解：就是将复杂难懂的东西经过概括总结变成一些易于理解的东西（可以这样理解：人们所能够解决的问题的复杂性直接取决于抽象的类型和质量，其中抽象的类型是指“所抽象的是什么”）。例如汇编语言就是对底层机器的轻微抽象，而C语言又是对汇编语言的抽象。<strong>C语言在汇编语言的基础上有了大幅的改进，但是它所作出的主要抽象仍然要求在解决问题时要基于计算机的结构，而并不是基于所要解决问题的本身结构来考虑。</strong>这就导致程序员必须要建立起在机器模型（解空间）和实际待解决问题模型（问题空间）之间的关联。（建立这种关联是费力的，是程序员需要做的，并非编程语言本身的功能，这就导致了程序难以编写，维护代价高昂等问题）</p>
+<blockquote>
+<p>这里解释两个名词：</p>
+<p>​    解空间 : 就是你对于问题建模的地方，例如计算机；</p>
+<p>​    问题空间 ：就是问题存在的地方，例如一项业务；</p>
+</blockquote>
+<p>​        区别于类似于C语言的主要抽象，<strong>另一种是对机器建模的方式就是只针对于待解决问题本身建模</strong>。如早期的编程语言LISP，APL等（这里不详细描述其细节了），这种方式对于他们所要解决的特定类型的问题都是不错的解决方案，但是一旦超出其特定领域，就显得会力不从心。</p>
+<p>​        而OOP所提供的表示问题空间中元素的工具更为优秀，其表示方法非常通用，不会让程序员受限于任何特定类型的问题。我们将问题空间中的元素极其在解空间的表示称为”对象“。<strong>这种思想的实质是：程序可以通过添加新类型的对象使自身适用于某个特定问题。</strong>所以，OOP允许根据问题来描述问题，而不是总是根据计算机来描述问题。</p>
+<h2 id="2-面向对象语言的特点"><a href="#2-面向对象语言的特点" class="headerlink" title="2.面向对象语言的特点"></a>2.面向对象语言的特点</h2><blockquote>
+<p>这里介绍一个编程语言Smalltalk，它仍被认为是最具有代表性的面向对象语言，也是Java所基于的语言之一，其作者Alan Kay总结了面向对象语言的5个基本特性：</p>
 <ul>
-<li>无序列表</li>
+<li><strong>万物皆为对象</strong>：对象是一种抽象的变量(在Java中就叫做引用数据类型)，它不仅可以存储数据，还可以有行为操作（例如Java中就是对象的属性和方法），理论上讲，你可以将待解决问题中的任何概念化元素抽取出来表示成程序中的对象。</li>
+<li><strong>程序是对象的集合，它们通过发送消息来告知彼此要做什么事情</strong>：要想请求使用一个对象，就要对该对象发送请求消息（例如调用该对象的某个方法或者获得该对象的某个属性）。</li>
+<li><strong>每个对象都有自己的由其他对象所构成的存储</strong>：这句话不太好理解，换言之，在Java中你所写好的一个类中，引入了好多第三方的包，这样就可以通过创建包含现有对象的包的方式来创建新类型的对象。这样就可以在程序中构建一个复杂的体系，同时将其复杂性又隐蔽在了对象的简单性背后。</li>
+<li><strong>每个对象都拥有其类型</strong>：说白了，每个对象都是某个类（class）的一个实例（instance）。这里要表明的重点是：每个类最重要的区别在于”你可以发送什么样的消息给它“。</li>
+<li><strong>某一特定类型的所有对象都可以接收同样的消息</strong>：这是一句意味深长的表述。可以这样理解：因为”狮子“类型的对象同时也是“动物”类型的对象，所以一个“狮子”对象必定能接受发送给“动物”对象的消息。这涉及到了<strong>继承和多态</strong>的特点，在后续中会说到，这里先不详细描述。但不得不提，<strong>继承和多态</strong>所带来的<strong>可替代性（substitutablility）</strong>是OOP最强有力的概念之一。</li>
 </ul>
-<ul>
-<li>无序列表2</li>
-</ul>
-<ol start="0">
-<li>有序列表噢</li>
-<li>我有序奥<pre><code> - 带带我
- - 好滴</code></pre>
+</blockquote>
+<p>​        对于对象还有一个更加简洁的描述：<strong>对象具有状态，行为和标识（每个对象都有属性，方法，和内存中唯一的地址）</strong>。</p>
+<h2 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h2><ul>
+<li><p>该文章通过抽象过程简述了面向对象的特性和优点，当然也可以理解为从面向过程到面向对象的转变，后续还会继续聊这个话题。</p>
 </li>
-<li>的的的</li>
-<li>1的的的</li>
-</ol>
-<blockquote>
-<p>区块</p>
-<p>人生是什么</p>
-<p>奋斗努力前行</p>
-</blockquote>
-<blockquote>
-<p>最外层</p>
-<blockquote>
-<p>第一层</p>
-<blockquote>
-<p>第2层</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<ol>
-<li>第一项</li>
-<li>第二项</li>
-</ol>
-<ul>
-<li>没有序</li>
-<li>依然无序</li>
-<li>还是无序</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>列表中用区块</p>
-<blockquote>
-<p>嘿嘿嘿嘿嘿嘿嘿</p>
-</blockquote>
+<li><p>不可将文章中面向对象语言的5个基本特征与封装，继承，多态混为一谈。前者是在直接描述对象的概念和本质，后者描述的是面向对象的好处，面向对象的三大特征后续还会继续详细描述。</p>
+<p>  ​        虽然这是自己的第一篇博客，但是我选择了这么庞大的话题，难度虽不小，但是我会尽力完成，会将我查看的文献和书籍中的精华部分提取出来展现到文章中，为了将OOP尽可能的讲述清楚且不出错，避免不了要引用一些书籍上的内容，当然，为了更好的理解，还会加上自己的一些理解（比如文章中某些生硬的概念在Java中的体现）。</p>
+<p>  ​        后续还会发布熟悉而陌生的面向对象(二)，（三）…..并且某些部分还会结合Java代码做出解释。</p>
+<p>  ​        感谢你的阅读！！！</p>
 </li>
 </ul>
-<p>有一个函数叫做<code>System.out.println(&quot;hello world！&quot;)</code> ，学Java第一个就要学会的东西；  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span></span>&#123;</span><br><span class="line">    Integer id; <span class="comment">//这是一个类的成员变量</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<p>这是一个链接<a target="_blank" rel="noopener" href="https://jingfeng999.github.io/">靖枫的Hexo博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.baidu.com/">https://www.baidu.com</a></p>
-<p><img src="C:\Users\admin\Desktop\avatarByJingfeng999.jpg" alt="图片而已"></p>
+<p>​        </p>
 
       
 
@@ -246,78 +210,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/04/testBolg01/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/03/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/2021/01/03/hello-world/" class="archive-article-date">
-  	<time datetime="2021-01-03T11:56:37.928Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/03/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/">展开全文 >></a>
         </p>
       
 
