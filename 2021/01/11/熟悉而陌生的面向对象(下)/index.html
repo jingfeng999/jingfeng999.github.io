@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jingfeng999.github.io">
-  <title>熟悉而陌生的面向对象(一) | 靖枫的博客</title>
+  <title>熟悉而陌生的面向对象(下) | 靖枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明">
+  <meta name="description" content="&amp;emsp;&amp;emsp;接着（上）篇内容从对象的角度来描述面向对象的三大特性，到底封装、继承和多态是什么，有什么作用和意义？">
 <meta property="og:type" content="article">
-<meta property="og:title" content="熟悉而陌生的面向对象(一)">
-<meta property="og:url" content="https://jingfeng999.github.io/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/index.html">
+<meta property="og:title" content="熟悉而陌生的面向对象(下)">
+<meta property="og:url" content="https://jingfeng999.github.io/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/index.html">
 <meta property="og:site_name" content="靖枫的博客">
-<meta property="og:description" content="本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;接着（上）篇内容从对象的角度来描述面向对象的三大特性，到底封装、继承和多态是什么，有什么作用和意义？">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jingfeng999.github.io/imgs/machao.jpg">
-<meta property="article:published_time" content="2021-01-10T12:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-10T14:45:35.432Z">
+<meta property="article:published_time" content="2021-01-10T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-01-14T12:03:12.000Z">
 <meta property="article:author" content="靖枫">
-<meta property="article:tag" content="java">
+<meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jingfeng999.github.io/imgs/machao.jpg">
   
     <link rel="alternative" href="/atom.xml" title="靖枫的博客" type="application/atom+xml">
   
@@ -62,14 +60,20 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/java/">java</a></li>
+				<li><a href="/tags/JavaSE/">JavaSE</a></li>
+	        
+				<li><a href="/tags/JavaEE/">JavaEE</a></li>
+	        
+				<li><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+	        
+				<li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
 		<nav>
-			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 1</span>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 3</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -130,6 +134,12 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -148,11 +158,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/java/">java</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/JavaSE/">JavaSE</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/JavaEE/">JavaEE</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -169,19 +185,15 @@
           <div id="js-content" class="content-ll">
             
 
-    <i class="fa fa-thumb-tack"></i>
-    <font color=7D26CD>置顶</font>
-    <span class="post-meta-divider">|</span>
-  
 
-<article id="post-熟悉而陌生的面向对象(一)" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-熟悉而陌生的面向对象(下)" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      熟悉而陌生的面向对象(一)
+      熟悉而陌生的面向对象(下)
     </h1>
   
 
@@ -196,8 +208,8 @@
   </a>
   
         
-        <a href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2021-01-10T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+        <a href="/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/" class="archive-article-date">
+  	<time datetime="2021-01-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
 </a>
         
       </header>
@@ -205,52 +217,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明</p>
+<p>&emsp;&emsp;接着（上）篇内容从对象的角度来描述面向对象的三大特性，到底封装、继承和多态是什么，有什么作用和意义？</p>
 </blockquote>
+<hr>
 <a id="more"></a>
-<h2 id="初写博客的小白前言"><a href="#初写博客的小白前言" class="headerlink" title="初写博客的小白前言"></a>初写博客的小白前言</h2><p>​        这是我的第一篇文章，我将会好好的全面剖析到底什么是<strong>面向对象</strong>。我相信大多数人在初学编程时，都是先学习的面向过程的编程方式，如C语言，这是众多大学在计算机学科开设的第一门编程语言专业课。我的大学亦是如此，当然大多数大学开设这门学科的目的不是让大家深入学习C语言的精髓-指针，而是以C语言为工具，让大家学习变量，各种操作符，if-else条件结构，循环结构，函数（也叫方法）等<strong>编程入门知识</strong>。</p>
-<p>​        就我个人而言，这些入门知识没有难到我，而真正让我头疼的就是下一个学期学习的C++，让我初识了面向对象。当时我学习面向对象时，我面临的最大的两个难点：<strong>1.更多复杂的语法 。 2.想不明白为啥要有面向对象这种东西。</strong></p>
-<p>​        语法复杂可以通过大量的练习来熟练记忆，但是到底什么是面向对象，是大多数人没法解释清楚的。前辈说过的一句话我记忆犹新：“面向对象是一种思想，你现在能体会到的只是语法表现出来的外壳，当你写过一些大规模程序后，你会对面向对象有不一样的理解，当你写了几年代码后，你又会对它有不一样的理解。”</p>
-<p>​        如今我作为一个Java学习者，也写过若干个中小型的项目，作为我的第一篇博客，我想聊一聊面向对象这个话题。我会以网上的一些文献和书籍为参考，并结合我个人的理解，聊一聊我眼中的面向对象。</p>
-<blockquote>
-<p>首先认识一个名词 , <strong>面向对象程序设计(Object-oriented Programming , OOP)。</strong></p>
-<p>文章中的面向对象程序设计将以英文缩写<strong>OOP</strong>来表示。文章中涉及的代码均为Java代码，<strong>但是本文章谈的是面向对象思想，并非谈java语法</strong>，所以以理解为主，对于其他面向对象语言的学习者是能够阅读的。</p>
-<p>同时该话题内容过多，会被分成多篇文章发出，这只是第一篇~~~</p>
-</blockquote>
-<hr>
-<h2 id="1-抽象过程"><a href="#1-抽象过程" class="headerlink" title="1.抽象过程"></a>1.抽象过程</h2><p>​        所有编程语言都提供了<strong>抽象机制</strong>，什么是抽象，可以这样浅显的理解：就是将复杂难懂的东西经过概括总结变成一些易于理解的东西（可以这样理解：人们所能够解决的问题的复杂性直接取决于抽象的类型和质量，其中抽象的类型是指“所抽象的是什么”）。例如汇编语言就是对底层机器的轻微抽象，而C语言又是对汇编语言的抽象。<strong>C语言在汇编语言的基础上有了大幅的改进，但是它所作出的主要抽象仍然要求在解决问题时要基于计算机的结构，而并不是基于所要解决问题的本身结构来考虑。</strong>这就导致程序员必须要建立起在机器模型（解空间）和实际待解决问题模型（问题空间）之间的关联。（建立这种关联是费力的，是程序员需要做的，并非编程语言本身的功能，这就导致了程序难以编写，维护代价高昂等问题）</p>
-<blockquote>
-<p>这里解释两个名词：</p>
-<p>​    解空间 : 就是你对于问题建模的地方，例如计算机；</p>
-<p>​    问题空间 ：就是问题存在的地方，例如一项业务；</p>
-</blockquote>
-<p>​        区别于类似于C语言的主要抽象，<strong>另一种是对机器建模的方式就是只针对于待解决问题本身建模</strong>。如早期的编程语言LISP，APL等（这里不详细描述其细节了），这种方式对于他们所要解决的特定类型的问题都是不错的解决方案，但是一旦超出其特定领域，就显得会力不从心。</p>
-<p>​        而OOP所提供的表示问题空间中元素的工具更为优秀，其表示方法非常通用，不会让程序员受限于任何特定类型的问题。我们将问题空间中的元素极其在解空间的表示称为”对象“。<strong>这种思想的实质是：程序可以通过添加新类型的对象使自身适用于某个特定问题。</strong>所以，OOP允许根据问题来描述问题，而不是总是根据计算机来描述问题。</p>
-<hr>
-<h2 id="2-面向对象语言的特点"><a href="#2-面向对象语言的特点" class="headerlink" title="2.面向对象语言的特点"></a>2.面向对象语言的特点</h2><blockquote>
-<p>这里介绍一个编程语言Smalltalk，它仍被认为是最具有代表性的面向对象语言，也是Java所基于的语言之一，其作者Alan Kay总结了面向对象语言的5个基本特性：</p>
-<ul>
-<li><strong>万物皆为对象</strong>：对象是一种抽象的变量(在Java中就叫做引用数据类型)，它不仅可以存储数据，还可以有行为操作（例如Java中就是对象的属性和方法），理论上讲，你可以将待解决问题中的任何概念化元素抽取出来表示成程序中的对象。</li>
-<li><strong>程序是对象的集合，它们通过发送消息来告知彼此要做什么事情</strong>：要想请求使用一个对象，就要对该对象发送请求消息（例如调用该对象的某个方法或者获得该对象的某个属性）。</li>
-<li><strong>每个对象都有自己的由其他对象所构成的存储</strong>：这句话不太好理解，换言之，在Java中你所写好的一个类中，引入了好多第三方的包，这样就可以通过创建包含现有对象的包的方式来创建新类型的对象。这样就可以在程序中构建一个复杂的体系，同时将其复杂性又隐蔽在了对象的简单性背后。</li>
-<li><strong>每个对象都拥有其类型</strong>：说白了，每个对象都是某个类（class）的一个实例（instance）。这里要表明的重点是：每个类最重要的区别在于”你可以发送什么样的消息给它“。</li>
-<li><strong>某一特定类型的所有对象都可以接收同样的消息</strong>：这是一句意味深长的表述。可以这样理解：因为”狮子“类型的对象同时也是“动物”类型的对象，所以一个“狮子”对象必定能接受发送给“动物”对象的消息。这涉及到了<strong>继承和多态</strong>的特点，在后续中会说到，这里先不详细描述。但不得不提，<strong>继承和多态</strong>所带来的<strong>可替代性（substitutablility）</strong>是OOP最强有力的概念之一。</li>
-</ul>
-</blockquote>
-<p>​        对于对象还有一个更加简洁的描述：<strong>对象具有状态，行为和标识（每个对象都有属性，方法，和内存中唯一的地址）</strong>。</p>
-<hr>
-<h2 id="结束语"><a href="#结束语" class="headerlink" title="(^_^)结束语"></a>(^_^)结束语</h2><ul>
-<li><p>该文章通过抽象过程简述了面向对象的特性和优点，当然也可以理解为从面向过程到面向对象的转变，后续还会继续聊这个话题。</p>
-</li>
-<li><p>不可将文章中面向对象语言的5个基本特征与封装，继承，多态混为一谈。前者是在直接描述对象的概念和本质，后者描述的是面向对象的好处，面向对象的三大特征后续还会继续详细描述。</p>
-</li>
-</ul>
-<blockquote>
-<p>虽然这是自己的第一篇博客，但是我选择了这么庞大的话题，难度虽不小，但是我会尽力完成，会将我查看的文献和书籍中的精华部分提取出来展现到文章中，为了将OOP尽可能的讲述清楚且不出错，避免不了要引用一些书籍上的内容，当然，为了更好的理解，还会加上自己的一些理解（比如文章中某些生硬的概念在Java中的体现）。后续还会发布熟悉而陌生的面向对象(二)，（三）…..并且某些部分还会结合Java代码做出解释。​        </p>
-</blockquote>
-<p>感谢你的阅读！<strong>若文章中有错误的地方还请您多多包涵，麻烦联系一下我并说明，我会及时改正的！</strong><br><img src="/imgs/machao.jpg" alt="马超"></p>
-<p>​        </p>
-
+<h2 id="5-被隐藏的具体实现-封装"><a href="#5-被隐藏的具体实现-封装" class="headerlink" title="5.被隐藏的具体实现-封装"></a>5.被隐藏的具体实现-封装</h2><hr>
+<h2 id="6-继承和单根继承结构-继承"><a href="#6-继承和单根继承结构-继承" class="headerlink" title="6.继承和单根继承结构-继承"></a>6.继承和单根继承结构-继承</h2><hr>
+<h2 id="7-伴随多态的可互换对象-多态"><a href="#7-伴随多态的可互换对象-多态" class="headerlink" title="7.伴随多态的可互换对象-多态"></a>7.伴随多态的可互换对象-多态</h2><hr>
+<h2 id="8-对象的创建和生命期"><a href="#8-对象的创建和生命期" class="headerlink" title="8.对象的创建和生命期"></a>8.对象的创建和生命期</h2><hr>
+<h2 id="9-异常处理：处理错误（并非面向对象的内容）"><a href="#9-异常处理：处理错误（并非面向对象的内容）" class="headerlink" title="9.异常处理：处理错误（并非面向对象的内容）"></a>9.异常处理：处理错误（并非面向对象的内容）</h2><hr>
+<h2 id="10-并发编程（并非面向对象内容）"><a href="#10-并发编程（并非面向对象内容）" class="headerlink" title="10.并发编程（并非面向对象内容）"></a>10.并发编程（并非面向对象内容）</h2>
       
 
       
@@ -288,18 +264,13 @@
     </div>
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
         		</li>
       		
 		</ul>
@@ -355,7 +326,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,6 +339,25 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2021/01/14/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Java的日期时间类Date,DateFormate,Calendar
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">熟悉而陌生的面向对象（上）</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -389,7 +379,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E5%86%99%E5%8D%9A%E5%AE%A2%E7%9A%84%E5%B0%8F%E7%99%BD%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">初写博客的小白前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%8A%BD%E8%B1%A1%E8%BF%87%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">1.抽象过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E8%AF%AD%E8%A8%80%E7%9A%84%E7%89%B9%E7%82%B9"><span class="toc-number">3.</span> <span class="toc-text">2.面向对象语言的特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9D%9F%E8%AF%AD"><span class="toc-number">4.</span> <span class="toc-text">(^_^)结束语</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E8%A2%AB%E9%9A%90%E8%97%8F%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0-%E5%B0%81%E8%A3%85"><span class="toc-number">1.</span> <span class="toc-text">5.被隐藏的具体实现-封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%8D%95%E6%A0%B9%E7%BB%A7%E6%89%BF%E7%BB%93%E6%9E%84-%E7%BB%A7%E6%89%BF"><span class="toc-number">2.</span> <span class="toc-text">6.继承和单根继承结构-继承</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E4%BC%B4%E9%9A%8F%E5%A4%9A%E6%80%81%E7%9A%84%E5%8F%AF%E4%BA%92%E6%8D%A2%E5%AF%B9%E8%B1%A1-%E5%A4%9A%E6%80%81"><span class="toc-number">3.</span> <span class="toc-text">7.伴随多态的可互换对象-多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E7%94%9F%E5%91%BD%E6%9C%9F"><span class="toc-number">4.</span> <span class="toc-text">8.对象的创建和生命期</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%EF%BC%9A%E5%A4%84%E7%90%86%E9%94%99%E8%AF%AF%EF%BC%88%E5%B9%B6%E9%9D%9E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">9.异常处理：处理错误（并非面向对象的内容）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B%EF%BC%88%E5%B9%B6%E9%9D%9E%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%86%85%E5%AE%B9%EF%BC%89"><span class="toc-number">6.</span> <span class="toc-text">10.并发编程（并非面向对象内容）</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -508,7 +498,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
               </li>
             
             <div class="clearfix"></div>

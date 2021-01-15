@@ -57,14 +57,20 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/java/">java</a></li>
+				<li><a href="/tags/JavaSE/">JavaSE</a></li>
+	        
+				<li><a href="/tags/JavaEE/">JavaEE</a></li>
+	        
+				<li><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+	        
+				<li><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
 			</ul>
 		</nav>
 		<nav>
-			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 1</span>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 3</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -125,6 +131,12 @@
 			
 				
 			
+				
+			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -143,11 +155,17 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+					<li style="width: 16.666666666666668%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/java/">java</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/JavaSE/">JavaSE</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/archives/index.html">归档</a></li>
+					<li style="width: 16.666666666666668%"><a href="/tags/JavaEE/">JavaEE</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/%E7%AE%97%E6%B3%95/">算法</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86">计算机原理</a></li>
+		        
+					<li style="width: 16.666666666666668%"><a href="/archives/index.html">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -164,31 +182,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-熟悉而陌生的面向对象(一)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Java中的Date,DateFormate,Calendar" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/">熟悉而陌生的面向对象(一)</a>
+      <a class="article-title" href="/2021/01/14/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/">Java的日期时间类Date,DateFormate,Calendar</a>
     </h1>
   
 
         <!--显示阅读次数-->
 
         
-        <a href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/" class="archive-article-date">
-  	<time datetime="2021-01-10T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+        <a href="/2021/01/14/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/" class="archive-article-date">
+  	<time datetime="2021-01-13T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>本将会详细聊面向对象的内容，只聊思想和理论，不以语法为主，但会以部分Java代码为面向对象作进一步的说明</p>
-</blockquote>
+        <p>&emsp;&emsp;日期时间的处理是业务中经常遇见的，作为Java程序员，日期时间相关的API不得不需要掌握。</p>
         
       
 
@@ -196,18 +212,13 @@
     </div>
     <div class="article-info article-info-index">
       
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
-      
       
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
         		</li>
       		
 		</ul>
@@ -217,7 +228,163 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%80)/">Read More >></a>
+          <a class="article-more-a" href="/2021/01/14/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/">Read More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-熟悉而陌生的面向对象(下)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/">熟悉而陌生的面向对象(下)</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+        
+        <a href="/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/" class="archive-article-date">
+  	<time datetime="2021-01-10T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>&emsp;&emsp;接着（上）篇内容从对象的角度来描述面向对象的三大特性，到底封装、继承和多态是什么，有什么作用和意义？</p>
+</blockquote>
+<hr>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/11/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1(%E4%B8%8B)/">Read More >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-熟悉而陌生的面向对象（上）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/">熟悉而陌生的面向对象（上）</a>
+    </h1>
+  
+
+        <!--显示阅读次数-->
+
+        
+        <a href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2021-01-10T12:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>&emsp;&emsp;相信很多编程爱好者（包括我在内），在初次学习面向对象时，都不能理解这种编程模式带来的好处，只有真正的写过若干个项目以后，才能深深体会到面向对象所带来的好处。</p>
+<p>&emsp;&emsp;面向过程到面向对象思想层面的转变： 面向过程关注的是执行的过程，面向对象关注的是具备功能的对象。 面向过程到面向对象，是<strong>程序员思想上，从执行者到指挥者的转变</strong>。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/01/10/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/">Read More >></a>
         </p>
       
 
@@ -347,7 +514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color2">JavaSE</a>
               </li>
             
             <div class="clearfix"></div>
