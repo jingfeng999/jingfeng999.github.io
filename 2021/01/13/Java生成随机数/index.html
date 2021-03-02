@@ -16,7 +16,7 @@
 <meta property="og:description" content="&amp;emsp;&amp;emsp;随机数在很多需求中经常遇见，如随机验证码，随机密码等。Java提供了封装好的生成随机数的API，后面将讲述如何使用Java生成随机数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-01-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-03-02T08:08:38.196Z">
+<meta property="article:modified_time" content="2021-03-02T08:18:16.697Z">
 <meta property="article:author" content="靖枫">
 <meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
@@ -220,9 +220,8 @@
 <a id="more"></a>
 
 <hr>
-<h2 id="1-java-lang-Math-random-方法"><a href="#1-java-lang-Math-random-方法" class="headerlink" title="1.java.lang.Math.random()方法"></a>1.java.lang.Math.random()方法</h2><p>&emsp;&emsp;在java.util.Math类中有个random方法，可以生成随机数，但是直接调用的话，并不会返回你所想要的随机数效果。<strong>默认情况下，其产生的随机数范围比较小，为大于等于0到小于1的double型随机数,用数学中的范围表达则是[0,1)（左闭右开，含头不含尾）</strong>。</p>
-<p>&emsp;&emsp;那么如果我想生成一个0到10的随机整数,即[0,10]，该如何实现呢？其实只需要对random()方法做一个小小的调整即可。只需要在random()本身上<strong>乘以10,那么范围就会扩大到0-10</strong>；而若要得到整数，则<strong>将返回值强转化成int</strong>，就能够得到去掉小数的整数；但是这样就得到了[0-10]的随机整数了吗，不不不，这只是得到了[0-10)或者[0-9]的随机整数，别忘了<strong>random()方法本身返回的随机数范围就是左闭右开的</strong>，所以如果要得到[0-10]，那么最初乘以的就不应该是10，而是乘以11。代码如下</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*int randomNumber = (int)(Math.random()*10);其实这只能得到[0-9]的整数*/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> randomNumber = (<span class="keyword">int</span>)(Math.random()*<span class="number">11</span>);<span class="comment">//这能得到[0-10]的随机整数</span></span><br></pre></td></tr></table></figure>
+<h2 id="1-java-lang-Math-random-方法"><a href="#1-java-lang-Math-random-方法" class="headerlink" title="1.java.lang.Math.random()方法"></a>1.java.lang.Math.random()方法</h2><p>&emsp;&emsp;在java.util.Math类中有个random方法，可以生成随机数，但是直接调用的话，并不会返回你所想要的随机数效果。<strong>默认情况下，其产生的随机数范围比较小，为大于等于0到小于1的double型随机数,用数学中的范围表达则是[0,1)（左闭右开，含头不含尾）</strong>。<br>&emsp;&emsp;那么如果我想生成一个0到10的随机整数,即[0,10]，该如何实现呢？其实只需要对random()方法做一个小小的调整即可。只需要在random()本身上<strong>乘以10,那么范围就会扩大到0-10</strong>；而若要得到整数，则<strong>将返回值强转化成int</strong>，就能够得到去掉小数的整数；但是这样就得到了[0-10]的随机整数了吗，不不不，这只是得到了[0-10)或者[0-9]的随机整数，别忘了<strong>random()方法本身返回的随机数范围就是左闭右开的</strong>，所以如果要得到[0-10]，那么最初乘以的就不应该是10，而是乘以11。代码如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*int randomNumber = (int)(Math.random()*10);其实这只能得到[0-9]的整数*/</span></span><br><span class="line"><span class="keyword">int</span> randomNumber = (<span class="keyword">int</span>)(Math.random()*<span class="number">11</span>);<span class="comment">//这能得到[0-10]的随机整数</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;那么如果我想得到一个[5-10]的随机整数呢？像这种左边界不为0的范围，就不能仅仅靠一个乘法来解决问题了，而是加法乘法相结合了~~~范围大小是10-5=5,因为左闭右开的特性，则需要给random（）乘以6。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> randomNumber = (<span class="keyword">int</span>)(Math.random()*<span class="number">6</span>);<span class="comment">//得到[0-5]或[0-6)的随机整数</span></span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;由[0-5]到[5-10],只需要<strong>给整体随机数加个5就可以了</strong>。</p>
@@ -231,15 +230,17 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> randomNumber = <span class="number">1800</span> + (<span class="keyword">int</span>)(Math.random()*<span class="number">401</span>);</span><br></pre></td></tr></table></figure>
 <p>可见虽然random方法其自身产生的随机数有比较严格的范围限制。但是<strong>只要对其进行合理的转换，程序员仍然可以采用这个方法产生用户所需要的随机数据</strong>。</p>
 <hr>
-<p>##2.java.util.Random类</p>
-<p>&emsp;&emsp;程序员可以通过实例化一个Random对象来创建一个随机数的生成器，如<strong>Random ran = new Random()，实例化一个java.util.Random的对象</strong>。这种方法创建随机数的机制与Math.random()的机制不同。实例化java.util.Random，<strong>Java编译器会以系统当前的时间作为随机数生成器的种子，由于时间是在时时刻刻变化的，若以不断变化的时间作为生成器的种子，就可以保证生成的随机数真的是随机的，其生成的随机数重复率就会大大降低</strong>。当然他还有第二个构造方法，Random(long seed)，是以指定的种子值进行实例化。</p>
+<h2 id="2-java-util-Random类"><a href="#2-java-util-Random类" class="headerlink" title="2.java.util.Random类"></a>2.java.util.Random类</h2><p>&emsp;&emsp;程序员可以通过实例化一个Random对象来创建一个随机数的生成器，如<strong>Random ran = new Random()，实例化一个java.util.Random的对象</strong>。这种方法创建随机数的机制与Math.random()的机制不同。实例化java.util.Random，<strong>Java编译器会以系统当前的时间作为随机数生成器的种子，由于时间是在时时刻刻变化的，若以不断变化的时间作为生成器的种子，就可以保证生成的随机数真的是随机的，其生成的随机数重复率就会大大降低</strong>。当然他还有第二个构造方法，Random(long seed)，是以指定的种子值进行实例化。</p>
 <p>&emsp;&emsp;该类提供了各种方法，<strong>如若想返回[0-10)的随机整数，则可以调用int nextInt(10)方法</strong>。如果想生成一个[1-100]的随机整数，代码如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random random = <span class="keyword">new</span> Random();</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">1</span> + random.nextInt(<span class="number">100</span>);</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;<strong>利用Random类来实现随机数，必须先创建一个对象，相比Math.random()，这是一个缺点。建议最好还是使用Math.random()来创建随机数</strong>。只有在生成一些比较特殊的随机数时采用Random类，如现在需要生成一个概率密度为高斯分布的双精度值随机数时，则通过采用Random类的方法来创建随机数相对来说比较简单一点。</p>
-<p>##3.产生随机的字符</p>
-<p>&emsp;&emsp;利用Math.random(),利用代码生成一个随机的小写字符：(char)(‘a’+Math.random()<em>(‘z’-‘a’+1))。其实与生成随机整数类似，只是对random()进行了适当的调整，这个代码进行适当的修整，还可以生成任意两个字符之间的随机字符与任意大写字符的随机字符。**只需要根据m+(int)(Math.Random()\</em>(n-m))这条语句来调整(char)(‘a’+Math.random()*(‘z’-‘a’+1))这个代码即可。**</p>
-<p>##4.进阶</p>
-<p>&emsp;&emsp;当你阅读了Math.random()方法的源码，不难发现，其内部其实就是实例化了java.util.Random，源码如下</p>
+<hr>
+<h2 id="3-产生随机的字符"><a href="#3-产生随机的字符" class="headerlink" title="3.产生随机的字符"></a>3.产生随机的字符</h2><p>&emsp;&emsp;利用Math.random(),利用代码生成一个随机的小写字符：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> x = (<span class="keyword">char</span>)(<span class="string">&#x27;a&#x27;</span>+Math.random()*(<span class="string">&#x27;z&#x27;</span>-<span class="string">&#x27;a&#x27;</span>+<span class="number">1</span>));</span><br></pre></td></tr></table></figure>
+<p>其实与生成随机整数类似，只是对random()进行了适当的调整，这个代码进行适当的修整，还可以生成任意两个字符之间的随机字符与任意大写字符的随机字符。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">只需根据m+(<span class="keyword">int</span>)(Math.Random()*(n-m))这条公式来调整(<span class="keyword">char</span>)(<span class="string">&#x27;a&#x27;</span>+Math.random()*(<span class="string">&#x27;z&#x27;</span>-<span class="string">&#x27;a&#x27;</span>+<span class="number">1</span>))即可。</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="4-进阶"><a href="#4-进阶" class="headerlink" title="4.进阶"></a>4.进阶</h2><p>&emsp;&emsp;当你阅读了Math.random()方法的源码，不难发现，其内部其实就是实例化了java.util.Random，源码如下</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">random</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Math.RandomNumberGeneratorHolder.randomNumberGenerator.nextDouble();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>&emsp;&emsp;RandomNumberGeneratorHolder是Math的一个静态内部类,让我们接着看看里面是什么样子的。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomNumberGeneratorHolder</span> </span>&#123;</span><br><span class="line">        <span class="keyword">static</span> <span class="keyword">final</span> Random randomNumberGenerator = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">RandomNumberGeneratorHolder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
@@ -410,7 +411,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-java-lang-Math-random-%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.java.lang.Math.random()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bye"><span class="toc-number">2.</span> <span class="toc-text">Bye</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-java-lang-Math-random-%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">1.java.lang.Math.random()方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-java-util-Random%E7%B1%BB"><span class="toc-number">2.</span> <span class="toc-text">2.java.util.Random类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BA%A7%E7%94%9F%E9%9A%8F%E6%9C%BA%E7%9A%84%E5%AD%97%E7%AC%A6"><span class="toc-number">3.</span> <span class="toc-text">3.产生随机的字符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E8%BF%9B%E9%98%B6"><span class="toc-number">4.</span> <span class="toc-text">4.进阶</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bye"><span class="toc-number">5.</span> <span class="toc-text">Bye</span></a></li></ol>
                     </div>
                 </span>
             </div>
