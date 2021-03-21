@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jingfeng999.github.io">
-  <title>JSON是什么，在Java如何解析JSON | 靖枫的博客</title>
+  <title>Archives: 2020 | 靖枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;JSON: JavaScript Object Notation JS对象简谱 , 是一种轻量级的数据交换格式，在数据传输方面可以取代XML。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JSON是什么，在Java如何解析JSON">
-<meta property="og:url" content="https://jingfeng999.github.io/2021/01/28/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/index.html">
+  <meta name="description" content="一个在编程之路上学会了插秧的男人">
+<meta property="og:type" content="website">
+<meta property="og:title" content="靖枫的博客">
+<meta property="og:url" content="https://jingfeng999.github.io/archives/2020/index.html">
 <meta property="og:site_name" content="靖枫的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;JSON: JavaScript Object Notation JS对象简谱 , 是一种轻量级的数据交换格式，在数据传输方面可以取代XML。">
+<meta property="og:description" content="一个在编程之路上学会了插秧的男人">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-28T09:27:03.264Z">
 <meta property="article:author" content="靖枫">
-<meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="靖枫的博客" type="application/atom+xml">
@@ -73,7 +70,7 @@
 			</ul>
 		</nav>
 		<nav>
-			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 6</span>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 5</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -184,106 +181,35 @@
           </div>
           <div id="js-content" class="content-ll">
             
-
-
-<article id="post-JSON是什么，Java如何解析JSON" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      JSON是什么，在Java如何解析JSON
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/12/20/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/" class="archive-article-date">
+  	<time datetime="2020-12-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-20</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/12/20/%E7%86%9F%E6%82%89%E8%80%8C%E9%99%8C%E7%94%9F%E7%9A%84%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%88%E4%B8%8A%EF%BC%89/">熟悉而陌生的面向对象</a>
     </h1>
   
 
-        <!--显示阅读次数-->
-
-  <br/>
-  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-  <span class="icon-sort"></span>
-  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-  </span>
-  </a>
-  
-        
-        <a href="/2021/01/28/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/" class="archive-article-date">
-  	<time datetime="2021-01-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;JSON: JavaScript Object Notation JS对象简谱 , 是一种<strong>轻量级的数据交换格式</strong>，在数据传输方面可以取代XML。</p>
-<a id="more"></a>
-
-<h1 id="为什么要用JSON？"><a href="#为什么要用JSON？" class="headerlink" title="为什么要用JSON？"></a>为什么要用JSON？</h1><p>&emsp;&emsp;和XML相比，它更轻量小巧但描述能力却不差，由于它的轻量级，在网络传输数据将消耗更少的流量，从而传输性能要<strong>比XML更加优秀</strong>。据说当传输数据规模达到某种较大的程度时，XML需要消耗十几分钟才能完成的任务，JSON只需要不到一分钟的时间。</p>
-<p>&emsp;&emsp;XML现如今被使用最多的地方就是配置文件。</p>
-<hr>
-<h1 id="JSON格式"><a href="#JSON格式" class="headerlink" title="JSON格式"></a>JSON格式</h1><p>&emsp;&emsp;JSON就是一串字符串,只不过元素会使用特定的符号标注。</p>
-<ul>
-<li>{} 双括号表示对象</li>
-<li>[] 中括号表示数组 [元素1,元素2…]</li>
-<li>“” 双引号内是属性或值</li>
-<li>: 属性和值成键值对出现，用：冒号相连，其中值可以是<strong>字符串，数字</strong>，<strong>还可以是对象，数组</strong>。</li>
-<li>多个键值对之间使用<strong>逗号分隔</strong>。</li>
-<li>键值对的键 应使用<strong>引号引住</strong>(通常Java解析时,键不使用引号会报错.而JS能正确解析)。</li>
-</ul>
-<p>举例子：Java中,表示一个Book对象</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Book b = <span class="keyword">new</span> Book();</span><br><span class="line"> b.setName(“金苹果”); </span><br><span class="line"> b.setInfo(“种苹果”);</span><br></pre></td></tr></table></figure>
-<p>用JSON表示</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;name&quot;:&quot;金苹果&quot;,&quot;info&quot;:&quot;种苹果&quot;&#125;</span><br></pre></td></tr></table></figure>
-<p>如果JSON数据量太大，可以通过工具来解析JSON，这样就可以清楚的看到层级关系。点击-&gt;<a target="_blank" rel="noopener" href="https://www.bejson.com/">解析JSON数据的网站</a></p>
-<p>案例（这是一个天气预报的JSON数据）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;code&quot;: &quot;10000&quot;,</span><br><span class="line">    &quot;charge&quot;: false,</span><br><span class="line">    &quot;msg&quot;: &quot;查询成功&quot;,</span><br><span class="line">    &quot;result&quot;: &#123;</span><br><span class="line">        &quot;status&quot;: &quot;0&quot;,</span><br><span class="line">        &quot;msg&quot;: &quot;ok&quot;,</span><br><span class="line">        &quot;result&quot;: &#123;</span><br><span class="line">            &quot;city&quot;: &quot;安顺&quot;,</span><br><span class="line">            &quot;cityid&quot;: &quot;111&quot;,</span><br><span class="line">            &quot;citycode&quot;: &quot;101260301&quot;,</span><br><span class="line">            &quot;date&quot;: &quot;2015-12-22&quot;,</span><br><span class="line">            &quot;week&quot;: &quot;星期二&quot;,</span><br><span class="line">            &quot;weather&quot;: &quot;多云&quot;,</span><br><span class="line">            &quot;temp&quot;: &quot;16&quot;,</span><br><span class="line">            &quot;temphigh&quot;: &quot;18&quot;,</span><br><span class="line">            &quot;templow&quot;: &quot;9&quot;,</span><br><span class="line">            &quot;img&quot;: &quot;1&quot;,</span><br><span class="line">            &quot;humidity&quot;: &quot;55&quot;,</span><br><span class="line">            &quot;pressure&quot;: &quot;879&quot;,</span><br><span class="line">            &quot;windspeed&quot;: &quot;14.0&quot;,</span><br><span class="line">            &quot;winddirect&quot;: &quot;南风&quot;,</span><br><span class="line">            &quot;windpower&quot;: &quot;2级&quot;,</span><br><span class="line">            &quot;updatetime&quot;: &quot;2015-12-22 15:37:03&quot;,</span><br><span class="line">            &quot;index&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;iname&quot;: &quot;空调指数&quot;,</span><br><span class="line">                    &quot;ivalue&quot;: &quot;较少开启&quot;,</span><br><span class="line">                    &quot;detail&quot;: &quot;您将感到很舒适，一般不需要开启空调。&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;iname&quot;: &quot;运动指数&quot;,</span><br><span class="line">                    &quot;ivalue&quot;: &quot;较适宜&quot;,</span><br><span class="line">                    &quot;detail&quot;: &quot;天气较好，无雨水困扰，较适宜进行各种运动，但因气温较低，在户外运动请注意增减衣物。&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;aqi&quot;: &#123;</span><br><span class="line">                &quot;so2&quot;: &quot;37&quot;,</span><br><span class="line">                &quot;so224&quot;: &quot;43&quot;,</span><br><span class="line">                &quot;no2&quot;: &quot;24&quot;,</span><br><span class="line">                &quot;no224&quot;: &quot;21&quot;,</span><br><span class="line">                &quot;co&quot;: &quot;0.647&quot;,</span><br><span class="line">                &quot;co24&quot;: &quot;0.675&quot;,</span><br><span class="line">                &quot;o3&quot;: &quot;26&quot;,</span><br><span class="line">                &quot;o38&quot;: &quot;14&quot;,</span><br><span class="line">                &quot;o324&quot;: &quot;30&quot;,</span><br><span class="line">                &quot;pm10&quot;: &quot;30&quot;,</span><br><span class="line">                &quot;pm1024&quot;: &quot;35&quot;,</span><br><span class="line">                &quot;pm2_5&quot;: &quot;23&quot;,</span><br><span class="line">                &quot;pm2_524&quot;: &quot;24&quot;,</span><br><span class="line">                &quot;iso2&quot;: &quot;13&quot;,</span><br><span class="line">                &quot;ino2&quot;: &quot;13&quot;,</span><br><span class="line">                &quot;ico&quot;: &quot;7&quot;,</span><br><span class="line">                &quot;io3&quot;: &quot;9&quot;,</span><br><span class="line">                &quot;io38&quot;: &quot;7&quot;,</span><br><span class="line">                &quot;ipm10&quot;: &quot;35&quot;,</span><br><span class="line">                &quot;ipm2_5&quot;: &quot;35&quot;,</span><br><span class="line">                &quot;aqi&quot;: &quot;35&quot;,</span><br><span class="line">                &quot;primarypollutant&quot;: &quot;PM10&quot;,</span><br><span class="line">                &quot;quality&quot;: &quot;优&quot;,</span><br><span class="line">                &quot;timepoint&quot;: &quot;2015-12-09 16:00:00&quot;,</span><br><span class="line">                &quot;aqiinfo&quot;: &#123;</span><br><span class="line">                    &quot;level&quot;: &quot;一级&quot;,</span><br><span class="line">                    &quot;color&quot;: &quot;#00e400&quot;,</span><br><span class="line">                    &quot;affect&quot;: &quot;空气质量令人满意，基本无空气污染&quot;,</span><br><span class="line">                    &quot;measure&quot;: &quot;各类人群可正常活动&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            &quot;daily&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;date&quot;: &quot;2015-12-22&quot;,</span><br><span class="line">                    &quot;week&quot;: &quot;星期二&quot;,</span><br><span class="line">                    &quot;sunrise&quot;: &quot;07:39&quot;,</span><br><span class="line">                    &quot;sunset&quot;: &quot;18:09&quot;,</span><br><span class="line">                    &quot;night&quot;: &#123;</span><br><span class="line">                        &quot;weather&quot;: &quot;多云&quot;,</span><br><span class="line">                        &quot;templow&quot;: &quot;9&quot;,</span><br><span class="line">                        &quot;img&quot;: &quot;1&quot;,</span><br><span class="line">                        &quot;winddirect&quot;: &quot;无持续风向&quot;,</span><br><span class="line">                        &quot;windpower&quot;: &quot;微风&quot;</span><br><span class="line">                    &#125;,</span><br><span class="line">                    &quot;day&quot;: &#123;</span><br><span class="line">                        &quot;weather&quot;: &quot;多云&quot;,</span><br><span class="line">                        &quot;temphigh&quot;: &quot;18&quot;,</span><br><span class="line">                        &quot;img&quot;: &quot;1&quot;,</span><br><span class="line">                        &quot;winddirect&quot;: &quot;无持续风向&quot;,</span><br><span class="line">                        &quot;windpower&quot;: &quot;微风&quot;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            ],</span><br><span class="line">            &quot;hourly&quot;: [</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;time&quot;: &quot;16:00&quot;,</span><br><span class="line">                    &quot;weather&quot;: &quot;多云&quot;,</span><br><span class="line">                    &quot;temp&quot;: &quot;14&quot;,</span><br><span class="line">                    &quot;img&quot;: &quot;1&quot;</span><br><span class="line">                &#125;,</span><br><span class="line">                &#123;</span><br><span class="line">                    &quot;time&quot;: &quot;17:00&quot;,</span><br><span class="line">                    &quot;weather&quot;: &quot;多云&quot;,</span><br><span class="line">                    &quot;temp&quot;: &quot;13&quot;,</span><br><span class="line">                    &quot;img&quot;: &quot;1&quot;</span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Java解析JSON"><a href="#Java解析JSON" class="headerlink" title="Java解析JSON"></a>Java解析JSON</h1><p>&emsp;&emsp;JSON是在开发中使用的会非常频繁，在Java后端，不仅需要能够将外部如前端传入的JSON字符串解析成Java对象，也需要能够将Java对象解析成JSON字符串传给其他人。用的最多的就是两种解析方式：<strong>谷歌的Gson，阿里的FastJson</strong>，使用前都需要将对应的<strong>Jar包导入到项目中</strong>，可以通过maven或到Github下载最新版本的Jar包。</p>
-<h2 id="Gson"><a href="#Gson" class="headerlink" title="Gson"></a>Gson</h2><h3 id="1-将Java对象转换成JSON字符串，将JSON字符串转换为Java对象"><a href="#1-将Java对象转换成JSON字符串，将JSON字符串转换为Java对象" class="headerlink" title="1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象"></a>1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建Gson对象,如果对象只用一次，则可以创建匿名对象直接使用</span></span><br><span class="line">Gson gson = <span class="keyword">new</span> Gson();</span><br><span class="line"><span class="comment">//将Book对象转换成Json字符串</span></span><br><span class="line">Book b = <span class="keyword">new</span> Book(<span class="number">1025</span>, <span class="string">&quot;java编程思想&quot;</span>, <span class="string">&quot;一本技术书&quot;</span>);</span><br><span class="line">String bookJsonStr = gson.toJson(b);</span><br><span class="line">System.out.println(bookJsonStr); <span class="comment">//&#123;&quot;id&quot;:1025,&quot;name&quot;:&quot;java编程思想&quot;,&quot;info&quot;:&quot;一本技术书&quot;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将Json字符串转换成对象</span></span><br><span class="line"><span class="comment">//参数1：标准的Json字符串；参数2：期望转成的对象类型</span></span><br><span class="line">Book book = gson.fromJson(bookJsonStr, Book.class);</span><br><span class="line">System.out.println(book.getName());<span class="comment">//java编程思想</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-将JSON字符串转换成集合"><a href="#2-将JSON字符串转换成集合" class="headerlink" title="2.将JSON字符串转换成集合"></a>2.将JSON字符串转换成集合</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将Json字符串转换成集合</span></span><br><span class="line">HashMap hashMap1 = <span class="keyword">new</span> Gson().fromJson(</span><br><span class="line">        <span class="string">&quot;&#123;\&quot;id\&quot;:1025,&quot;</span> +</span><br><span class="line">        <span class="string">&quot;\&quot;name\&quot;:\&quot;java编程思想\&quot;,&quot;</span> +</span><br><span class="line">        <span class="string">&quot;\&quot;info\&quot;:\&quot;一本技术书\&quot;&#125;&quot;</span>, HashMap.class);</span><br><span class="line">System.out.println(hashMap1.get(<span class="string">&quot;info&quot;</span>));<span class="comment">//一本技术书</span></span><br></pre></td></tr></table></figure>
-<h3 id="3-JSON字符串中的数组在Java中会被转为List集合"><a href="#3-JSON字符串中的数组在Java中会被转为List集合" class="headerlink" title="3.JSON字符串中的数组在Java中会被转为List集合"></a>3.JSON字符串中的数组在Java中会被转为List集合</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Json字符串中的数组在Java中会被转为List集合</span></span><br><span class="line"><span class="comment">//下面的Json字符串 是 &#123;&quot;id&quot;:1025,&quot;name&quot;:&quot;java编程思想&quot;,&quot;info&quot;:&quot;一本技术书&quot;,&quot;page&quot;:[&quot;小猪佩奇&quot;,&quot;蜘蛛侠&quot;,&quot;蝙蝠侠&quot;]&#125;</span></span><br><span class="line">HashMap hashMap2 = <span class="keyword">new</span> Gson().fromJson(</span><br><span class="line">            <span class="string">&quot;&#123;\&quot;id\&quot;:1025,\&quot;&quot;</span> +</span><br><span class="line">                    <span class="string">&quot;name\&quot;:\&quot;java编程思想\&quot;,&quot;</span> +</span><br><span class="line">                <span class="string">&quot;\&quot;info\&quot;:\&quot;一本技术书\&quot;,&quot;</span> +</span><br><span class="line">                <span class="string">&quot;\&quot;page\&quot;:[\&quot;小猪佩奇\&quot;,\&quot;蜘蛛侠\&quot;,\&quot;蝙蝠侠\&quot;]&#125;&quot;</span>, HashMap.class);</span><br><span class="line">System.out.println(hashMap2.get(<span class="string">&quot;page&quot;</span>));<span class="comment">//[小猪佩奇, 蜘蛛侠, 蝙蝠侠]</span></span><br><span class="line">System.out.println(hashMap2.get(<span class="string">&quot;page&quot;</span>).getClass());<span class="comment">//class java.util.ArrayList</span></span><br><span class="line">List list = (List) hashMap2.get(<span class="string">&quot;page&quot;</span>);</span><br><span class="line">System.out.println(list.get(<span class="number">1</span>));<span class="comment">//蜘蛛侠</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="FastJson"><a href="#FastJson" class="headerlink" title="FastJson"></a>FastJson</h2><h3 id="1-将Java对象转换成JSON字符串，将JSON字符串转换为Java对象-1"><a href="#1-将Java对象转换成JSON字符串，将JSON字符串转换为Java对象-1" class="headerlink" title="1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象"></a>1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将对象转换成Json字符串</span></span><br><span class="line">Book b = <span class="keyword">new</span> Book(<span class="number">12321</span>, <span class="string">&quot;剑指Offer&quot;</span>, <span class="string">&quot;大厂面试必备的书&quot;</span>);</span><br><span class="line"><span class="comment">//所有都是JSON类的静态方法</span></span><br><span class="line">String JsonStr = JSON.toJSONString(b);</span><br><span class="line">System.out.println(JsonStr);<span class="comment">//&#123;&quot;id&quot;:12321,&quot;info&quot;:&quot;大厂面试必备的书&quot;,&quot;name&quot;:&quot;剑指Offer&quot;&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//将json字符串转换成对象</span></span><br><span class="line">Book parseBook = JSON.parseObject(JsonStr, Book.class);</span><br><span class="line">System.out.println(parseBook.getName());<span class="comment">//剑指Offer</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-将JSON字符串转换成数组集合"><a href="#2-将JSON字符串转换成数组集合" class="headerlink" title="2.将JSON字符串转换成数组集合"></a>2.将JSON字符串转换成数组集合</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//将Json字符串转换成数组</span></span><br><span class="line"><span class="comment">//[&quot;Java编程思想&quot;,&quot;深入理解计算机系统&quot;,&quot;现代操作系统&quot;,&quot;TCP/IP详解&quot;]</span></span><br><span class="line">List&lt;String&gt; list = JSON.parseArray(<span class="string">&quot;[\&quot;Java编程思想\&quot;,\&quot;深入理解计算机系统\&quot;,\&quot;现代操作系统\&quot;,\&quot;TCP/IP详解\&quot;]&quot;</span>, String.class);</span><br><span class="line">System.out.println(list.get(<span class="number">3</span>));<span class="comment">//TCP/IP详解</span></span><br></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/imgs/Alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/imgs/wxpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -295,120 +221,19 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/01/28/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
   
   
-    <a href="/2021/01/26/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">任务和线程池</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E7%94%A8JSON%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">为什么要用JSON？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JSON%E6%A0%BC%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">JSON格式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Java%E8%A7%A3%E6%9E%90JSON"><span class="toc-number">3.</span> <span class="toc-text">Java解析JSON</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Gson"><span class="toc-number">3.1.</span> <span class="toc-text">Gson</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86Java%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E5%B0%86JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAJava%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.1.1.</span> <span class="toc-text">1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%86JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E9%9B%86%E5%90%88"><span class="toc-number">3.1.2.</span> <span class="toc-text">2.将JSON字符串转换成集合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E5%9C%A8Java%E4%B8%AD%E4%BC%9A%E8%A2%AB%E8%BD%AC%E4%B8%BAList%E9%9B%86%E5%90%88"><span class="toc-number">3.1.3.</span> <span class="toc-text">3.JSON字符串中的数组在Java中会被转为List集合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FastJson"><span class="toc-number">3.2.</span> <span class="toc-text">FastJson</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86Java%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E6%88%90JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%EF%BC%8C%E5%B0%86JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E4%B8%BAJava%E5%AF%B9%E8%B1%A1-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">1.将Java对象转换成JSON字符串，将JSON字符串转换为Java对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B0%86JSON%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2%E6%88%90%E6%95%B0%E7%BB%84%E9%9B%86%E5%90%88"><span class="toc-number">3.2.2.</span> <span class="toc-text">2.将JSON字符串转换成数组集合</span></a></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -435,8 +260,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

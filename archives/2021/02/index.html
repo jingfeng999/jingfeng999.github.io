@@ -6,19 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jingfeng999.github.io">
-  <title>任务和线程池 | 靖枫的博客</title>
+  <title>Archives: 2021/2 | 靖枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;构造一个新的线程开销有些大，因为这些涉及到了与操作系统的交互。如果你的程序中有大量生命期很短暂的线程，那么就不应该把每个任务映射到一个个单独的线程，而应该使用线程池（thread pool）。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="任务和线程池">
-<meta property="og:url" content="https://jingfeng999.github.io/2021/01/26/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/index.html">
+  <meta name="description" content="一个在编程之路上学会了插秧的男人">
+<meta property="og:type" content="website">
+<meta property="og:title" content="靖枫的博客">
+<meta property="og:url" content="https://jingfeng999.github.io/archives/2021/02/index.html">
 <meta property="og:site_name" content="靖枫的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;构造一个新的线程开销有些大，因为这些涉及到了与操作系统的交互。如果你的程序中有大量生命期很短暂的线程，那么就不应该把每个任务映射到一个个单独的线程，而应该使用线程池（thread pool）。">
+<meta property="og:description" content="一个在编程之路上学会了插秧的男人">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-01-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-01-26T19:49:35.775Z">
 <meta property="article:author" content="靖枫">
-<meta property="article:tag" content="JavaSE">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="靖枫的博客" type="application/atom+xml">
@@ -73,7 +70,7 @@
 			</ul>
 		</nav>
 		<nav>
-			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 6</span>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 5</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -184,135 +181,35 @@
           </div>
           <div id="js-content" class="content-ll">
             
-
-
-<article id="post-任务和线程池" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 class="article-title" itemprop="name">
-      任务和线程池
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/02/27/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
+  	<time datetime="2021-02-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-27</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/27/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/">任务和线程池</a>
     </h1>
   
 
-        <!--显示阅读次数-->
-
-  <br/>
-  <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-  <span class="icon-sort"></span>
-  <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
-            阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
-  </span>
-  </a>
-  
-        
-        <a href="/2021/01/26/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/" class="archive-article-date">
-  	<time datetime="2021-01-25T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-01-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>&emsp;&emsp;构造一个新的线程开销有些大，因为这些涉及到了与操作系统的交互。如果你的程序中有大量生命期很短暂的线程，那么就不应该把每个任务映射到一个个单独的线程，而应该使用<strong>线程池（thread pool）</strong>。</p>
-<a id="more"></a>
-
-<p>&emsp;&emsp;线程池中包含着许多准备运行的线程。为一个线程池提供一个Runnable，就会有一个线程调用run方法执行对应的任务。当run方法结束退出时，如果是单独的线程就会即将死亡，但是线程池中的线程不会死亡，而是留在池中准备为下一个请求提供服务。</p>
-<hr>
-<h1 id="Callable和Futrue"><a href="#Callable和Futrue" class="headerlink" title="Callable和Futrue"></a>Callable和Futrue</h1><p>&emsp;&emsp;在了解线程池之前，应该先了解什么是任务，因为线程池的执行模式就像一群待命的士兵，只有接收到任务请求，才会去开始工作。</p>
-<p>&emsp;&emsp;Runnable封装着一个<strong>异步运行的任务</strong>，可以把它想象成一个没有参数和返回值的异步方法，我们只需要编写好run方法里的任务内容，交给一个Thread对象。</p>
-<p>&emsp;&emsp;Callable和Runnable就很相似，但不同在于<strong>它有返回值</strong>，实现Callable接口被称为第三种创建线程的方式。Callable接口是一个参数化的类型，只有一个方法call。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callable</span>&lt;<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Computes a result, or throws an exception if unable to do so.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> computed result</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception if unable to compute a result</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">V <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;Future保存异步计算的结果。可以启动一个计算，将Future对象交给一个线程，这个Futrue对象在计算完成后就会得到计算得到的结果。</p>
-<h3 id="java-util-concurrent-Futrue-lt-V-gt-接口有如下方法："><a href="#java-util-concurrent-Futrue-lt-V-gt-接口有如下方法：" class="headerlink" title="java.util.concurrent.Futrue&lt;V&gt;接口有如下方法："></a>java.util.concurrent.Futrue&lt;V&gt;接口有如下方法：</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">V <span class="title">get</span><span class="params">()</span></span></span><br><span class="line"><span class="function">V <span class="title">get</span><span class="params">(<span class="keyword">long</span> timeout, TimeUnit unit)</span></span></span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;获取结果的方法，<strong>两个get方法调用后都会阻塞</strong>，直到计算完成。第二个get方法调用后，在计算机完成之前，调用时间已经超过了传入其参数所表示的时间，会抛出一个TimeoutException异常。如果运行该计算的线程被中断，这两个方法都会抛出InterruptedException。如果计算完成，那么get方法将会得到相应的返回值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">cancle</span><span class="params">(<span class="keyword">boolean</span> mayInterrupt)</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isCancelled</span><span class="params">()</span><span class="comment">//如果任务在完成前被取消，则返回true</span></span></span><br><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">isDone</span><span class="params">()</span><span class="comment">//如果任务结束，无论是正常完成、中途取消、还是发生异常，都返回true</span></span></span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;可以用cancle方法取消计算。如果计算还没有开始，那么它会被取消且不再开始。如果计算已经开始了，那么如果mayInterrupt为true，则它会被中断。如果成功执行了取消操作，则返回true。</p>
-<blockquote>
-<p>注意：取消一个任务涉及两个步骤：必须<strong>找到并且中断底层线程</strong>。另外任务实现（在call方法中）必须能够感知中断，并且放弃它的工作。如果一个Futrue对象不知道任务在哪个线程中执行，或者任务在执行过程中并不能监视着执行此任务的线程的中断状态，那么取消任务这个操作是没有任何效果的。</p>
-</blockquote>
-<p>&emsp;&emsp;</p>
-<p>&emsp;&emsp;执行一个Callable的一种方法就是使用FutureTask，<strong>因为FutureTask实现了Future和Runnable接口</strong>，其构造方法FutureTask(Callable&lt;V&gt; task)可以构造一个既是Future&lt;V&gt;又是Runnable对象。所以可以创建一个线程来执行任务：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        FutureTask&lt;Integer&gt; task = <span class="keyword">new</span> FutureTask(<span class="keyword">new</span> MyCallable&lt;Integer&gt;());</span><br><span class="line">        <span class="keyword">new</span> Thread(task).start(); <span class="comment">//它是Runnable</span></span><br><span class="line">        Integer value = task.get(); <span class="comment">//它是Futrue</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Callable线程的返回值:&quot;</span>+value);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">            Thread.sleep(<span class="number">200</span>);</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//实现Callable的内部类</span></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCallable</span>&lt;<span class="title">I</span> <span class="keyword">extends</span> <span class="title">Number</span>&gt; <span class="keyword">implements</span> <span class="title">Callable</span>&lt;<span class="title">Integer</span>&gt;</span>&#123;</span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> Integer <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">                Thread.sleep(<span class="number">200</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:&quot;</span>+i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*控制台结果</span></span><br><span class="line"><span class="comment">    Thread-0:0</span></span><br><span class="line"><span class="comment">    Thread-0:1</span></span><br><span class="line"><span class="comment">    Thread-0:2</span></span><br><span class="line"><span class="comment">    Thread-0:3</span></span><br><span class="line"><span class="comment">    Thread-0:4</span></span><br><span class="line"><span class="comment">    Callable线程的返回值:100</span></span><br><span class="line"><span class="comment">    main:0</span></span><br><span class="line"><span class="comment">    main:1</span></span><br><span class="line"><span class="comment">    main:2</span></span><br><span class="line"><span class="comment">    main:3</span></span><br><span class="line"><span class="comment">    main:4</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;从上述代码中可以很好的观察到，get方法被调用后main线程被阻塞了，直到get内部计算完成，才能继续执行main线程后面的内容。当然上述代码可以通过Lambda表达式更简化</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Demo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> ExecutionException, InterruptedException </span>&#123;</span><br><span class="line">        FutureTask&lt;Integer&gt; task = <span class="keyword">new</span> FutureTask(() -&gt; &#123; </span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">                Thread.sleep(<span class="number">200</span>);</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:&quot;</span>+i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">100</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="keyword">new</span> Thread(task).start();<span class="comment">//它是Runnable</span></span><br><span class="line">        Integer value = task.get();<span class="comment">//它是Futrue</span></span><br><span class="line">        System.out.println(<span class="string">&quot;Callable线程的返回值:&quot;</span>+value);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">            Thread.sleep(<span class="number">200</span>);</span><br><span class="line">            System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:&quot;</span>+i);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="执行器"><a href="#执行器" class="headerlink" title="执行器"></a>执行器</h1><p>&emsp;&emsp;执行器(Executors)类有许多的静态工厂方法，用来构造线程池，下面将介绍几个其能够创建的线程池。</p>
-<ul>
-<li>static ExecutorService newCachedThreadPool() &emsp;缓存线程池。如果有空闲线程可用，就会使用空闲线程执行任务；<strong>如果没有空闲线程，就会创建一个新的线程</strong>。是一种<strong>线程数量不定长</strong>的线程池，空闲线程会保留60秒。</li>
-</ul>
-<ul>
-<li>static ExecutorService newFixedThreadPool​(int nThreads) &emsp;定长线程池。一个<strong>具有固定大小</strong>的线程池，数量就是传入的int nThread，其空闲的线程会一直保留。如果提交的任务多于空闲线程数，就<strong>会把未服务的任务放到等待队列</strong>，当其他任务完成以后再运行这些排队的任务。</li>
-</ul>
-<ul>
-<li><p>static ExecutorService newSingleThreadExecutor() &emsp;单线程线程池。<strong>大小为1的线程池</strong>，由一个线程顺序地执行所提交的任务（一个接着一个执行）。</p>
-</li>
-<li><p>static ScheduledExecutorService newScheduledThreadPool​(int corePoolSize) &emsp;周期性任务定长线程池。用于调度执行的固定线程池。可以调度命令在给定的延迟后运行，或者定期周期性执行。 </p>
-</li>
-</ul>
-<p>&emsp;&emsp;线程池的优点：<strong>降低资源消耗，提高响应速度，提高线程的可管理性</strong>。不同的线程池有不同的应用场合。</p>
-<p>&emsp;&emsp;如果线程生存期很短，或者大量时间都在阻塞，那么可以使用一个缓存线程池。不过，如果线程工作量很大而且并不阻塞，你肯定不希望运行太多的线程。</p>
-<p>&emsp;&emsp;为了得到最优的运行速度，并发线程数等于处理器内核数。在这种情况下，就应当使用固定线程池，即并发线程总数有一个上限。</p>
-<p>&emsp;&emsp;单线程执行器对于性能分析很有帮助。如果临时使用一个单线程池替换缓存或固定线程池，就能测量不使用并发的情况下应用的运行速度会慢多少。</p>
-<p>在ExecutorService中有如下三个方法可以将Runnable或Callable对象提交给ExecutorService</p>
-<ul>
-<li>Future&lt;T&gt; submit​(Callable&lt;T&gt; task) </li>
-<li>Future&lt;T&gt; submit​(Runnable task, T result) </li>
-<li>Future&lt;?&gt; submit​(Runnable task) </li>
-</ul>
-<p>&emsp;&emsp;线程池会在方便的时候尽早执行提交的任务，调用submit时，会得到一个Futrue对象，可用来得到结果或取消任务。第二个submit返回的Future，它的get方法在完成的时候返回指定的result对象。第三个submit返回来的Future&lt;?&gt;看起来有些奇怪，可以用这样一个对象调用isDone，cancel，isCancelled，但是它的get方法只会返回null。</p>
-<p>&emsp;&emsp;对于提交任务，在Executor接口中有void execute​(Runnable command）。ExecutorService继承了Executor接口，所以也可以用这个方法来执行任务。</p>
-<p>&emsp;&emsp;使用完一个线程池时，调用shutdown。这个方法启动线程池的关闭序列。被关闭的线程池不再接受新的任务。当所有的任务都完成时，线程池中的所有线程都会死亡。另一种方法是调用shutdownNow，线程池会取消所有尚未开始的任务。</p>
-<p>下面列出几个线程池的基本使用代码</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CachedThreadPool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService service = Executors.newCachedThreadPool();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">5</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>( i == <span class="number">4</span>)&#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    Thread.sleep(<span class="number">1000</span>); <span class="comment">//从控制台的输出，看出线程被复用的效果</span></span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            service.execute(() -&gt; &#123;</span><br><span class="line">                System.out.println(Thread.currentThread().getName()+<span class="string">&quot;：biubiubiu&quot;</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        service.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FixedThreadPool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService service = Executors.newFixedThreadPool(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span>; i++)&#123;<span class="comment">//从控制台结果能看出，线程复用的效果</span></span><br><span class="line">            service.execute(() -&gt; &#123;System.out.println(Thread.currentThread().getName()+<span class="string">&quot;：biubiubiu&quot;</span>);&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        service.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SingleThreadPool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ExecutorService service = Executors.newSingleThreadExecutor();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span> ; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">            service.execute(() -&gt; &#123;System.out.println(Thread.currentThread().getName()+<span class="string">&quot;：biubiubiu&quot;</span>);&#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        service.shutdown();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>&emsp;&emsp;ScheduledExecutorService接口为<strong>调度执行和重复执行任务</strong>提供了一些方法。这是对支持简历线程池的java.util.Timer的泛化。Executors类的newScheduledThreadPool​(int corePoolSize)和newSingleThreadScheduledExecutor()返回实现ScheduledExecutorService接口的对象。可以调度Runnable或Callable在一个初始延迟之后执行一次，也可以调度Runnable定期运行。下面代码详细介绍两个方法的使用和参数介绍。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScheduledThreadPool</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        ScheduledExecutorService service = Executors.newScheduledThreadPool(<span class="number">3</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1.定时实行一次某任务</span></span><br><span class="line"><span class="comment">         * 参数1：定时执行的任务</span></span><br><span class="line"><span class="comment">         * 参数2：时长数字</span></span><br><span class="line"><span class="comment">         * 参数3：时长数字的时间单位，通过TimeUnit的常量指定</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        service.schedule(() -&gt; &#123;System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:定期执行哦！！&quot;</span>);&#125;, <span class="number">3</span>, TimeUnit.SECONDS);</span><br><span class="line"></span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 2.周期执行某任务</span></span><br><span class="line"><span class="comment">         * 参数1：周期执行的任务</span></span><br><span class="line"><span class="comment">         * 参数2：延迟时长数字（第一次实行是在XXX时间数字以后）</span></span><br><span class="line"><span class="comment">         * 参数3：周期时长数字（第一次实行完后，每隔多久执行一次）</span></span><br><span class="line"><span class="comment">         * 参数4：时间数字单位</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line">        service.scheduleAtFixedRate(() -&gt; &#123;System.out.println(Thread.currentThread().getName()+<span class="string">&quot;:周期执行哦！！&quot;</span>);&#125;, <span class="number">5</span>, <span class="number">1</span>, TimeUnit.SECONDS);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>更多的方法等详细内容参见jdk11API文档介绍</strong>。</p>
-<hr>
-<h2 id="Bye"><a href="#Bye" class="headerlink" title="Bye"></a>Bye</h2><p> <strong>感谢你的阅读！若文章中有错误的地方还请您多多包涵，麻烦联系一下我并说明，我会及时改正的！！！</strong></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/imgs/Alipay.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/imgs/wxpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -324,129 +221,95 @@
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/01/26/%E4%BB%BB%E5%8A%A1%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%B1%A0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
   
-<nav id="article-nav">
-  
-    <a href="/2021/01/28/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JSON是什么，在Java如何解析JSON
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2021/01/14/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Java的日期时间类Date,DateFormate,Calendar</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/02/24/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/" class="archive-article-date">
+  	<time datetime="2021-02-23T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-24</time>
+</a>
         </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Callable%E5%92%8CFutrue"><span class="toc-number">1.</span> <span class="toc-text">Callable和Futrue</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-util-concurrent-Futrue-lt-V-gt-%E6%8E%A5%E5%8F%A3%E6%9C%89%E5%A6%82%E4%B8%8B%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">java.util.concurrent.Futrue&lt;V&gt;接口有如下方法：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E5%99%A8"><span class="toc-number">2.</span> <span class="toc-text">执行器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Bye"><span class="toc-number">2.1.</span> <span class="toc-text">Bye</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/24/JSON%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8CJava%E5%A6%82%E4%BD%95%E8%A7%A3%E6%9E%90JSON/">JSON是什么，在Java如何解析JSON</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+
         </div>
-        
-    </div>
-</aside>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/02/12/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/" class="archive-article-date">
+  	<time datetime="2021-02-11T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-02-12</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/02/12/Java%E4%B8%AD%E7%9A%84Date,DateFormate,Calendar/">Java的日期时间类Date,DateFormate,Calendar</a>
+    </h1>
+  
 
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">JavaSE</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+          
 
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
   
   
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -473,8 +336,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
