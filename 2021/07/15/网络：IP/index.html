@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="靖枫的博客">
 <meta property="og:description" content="&amp;emsp;&amp;emsp;网络。。。。线程池（thread pool）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://jingfeng999.github.io/2021/07/15/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/%E7%BD%91%E8%AF%BEtest/BP.png">
+<meta property="og:image" content="https://jingfeng999.github.io/2021/07/15/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/BP.png">
 <meta property="article:published_time" content="2021-07-14T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-07-15T02:35:13.874Z">
+<meta property="article:modified_time" content="2021-07-15T02:46:45.932Z">
 <meta property="article:author" content="靖枫">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jingfeng999.github.io/2021/07/15/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/%E7%BD%91%E8%AF%BEtest/BP.png">
+<meta name="twitter:image" content="https://jingfeng999.github.io/2021/07/15/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/%E7%BD%91%E7%BB%9C%EF%BC%9AIP/BP.png">
   
     <link rel="alternative" href="/atom.xml" title="靖枫的博客" type="application/atom+xml">
   
@@ -217,8 +217,7 @@
 
 <p>&emsp;&emsp;</p>
 <hr>
-<p><img src="%E7%BD%91%E8%AF%BEtest/BP.png" alt="BP"></p>
-<h1 id="Callable和Futrue"><a href="#Callable和Futrue" class="headerlink" title="Callable和Futrue"></a>Callable和Futrue</h1><p>&emsp;&emsp;在了解线程池之前，应该先了解什么是任务，因为线程池的执行模式就像一群待命的士兵，只有接收到任务请求，才会去开始工作。</p>
+<h1 id="Callable和Futrue"><a href="#Callable和Futrue" class="headerlink" title="Callable和Futrue"></a>Callable和Futrue</h1><p><img src="%E7%BD%91%E7%BB%9C%EF%BC%9AIP/BP.png" alt="BP"><br>&emsp;&emsp;在了解线程池之前，应该先了解什么是任务，因为线程池的执行模式就像一群待命的士兵，只有接收到任务请求，才会去开始工作。</p>
 <p>&emsp;&emsp;Runnable封装着一个<strong>异步运行的任务</strong>，可以把它想象成一个没有参数和返回值的异步方法，我们只需要编写好run方法里的任务内容，交给一个Thread对象。</p>
 <p>&emsp;&emsp;Callable和Runnable就很相似，但不同在于<strong>它有返回值</strong>，实现Callable接口被称为第三种创建线程的方式。Callable接口是一个参数化的类型，只有一个方法call。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Callable</span>&lt;<span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Computes a result, or throws an exception if unable to do so.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> computed result</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> Exception if unable to compute a result</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">V <span class="title">call</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
