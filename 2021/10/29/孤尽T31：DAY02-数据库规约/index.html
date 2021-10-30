@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://jingfeng999.github.io">
-  <title>孤尽T31：DAY01架构设计 | 靖枫的博客</title>
+  <title>孤尽T31：DAY02-数据库规约 | 靖枫的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;emsp;&amp;emsp;这节课主要学习的是如何从架构的角度去看待项目，其中包含了七大设计原则，简单总结一下。">
+  <meta name="description" content="&amp;emsp;&amp;emsp;这节课主要学习的是数据库相关的规约，其中包括了建表规约，索引规约等，简单总结一下。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="孤尽T31：DAY01架构设计">
-<meta property="og:url" content="https://jingfeng999.github.io/2021/10/28/T31%EF%BC%9ADAY01/index.html">
+<meta property="og:title" content="孤尽T31：DAY02-数据库规约">
+<meta property="og:url" content="https://jingfeng999.github.io/2021/10/29/%E5%AD%A4%E5%B0%BDT31%EF%BC%9ADAY02-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E7%BA%A6/index.html">
 <meta property="og:site_name" content="靖枫的博客">
-<meta property="og:description" content="&amp;emsp;&amp;emsp;这节课主要学习的是如何从架构的角度去看待项目，其中包含了七大设计原则，简单总结一下。">
+<meta property="og:description" content="&amp;emsp;&amp;emsp;这节课主要学习的是数据库相关的规约，其中包括了建表规约，索引规约等，简单总结一下。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-27T16:00:00.000Z">
-<meta property="article:modified_time" content="2021-10-28T09:48:45.541Z">
+<meta property="article:published_time" content="2021-10-28T16:00:00.000Z">
+<meta property="article:modified_time" content="2021-10-30T09:03:30.753Z">
 <meta property="article:author" content="靖枫">
 <meta property="article:tag" content="孤尽T31">
 <meta name="twitter:card" content="summary">
@@ -73,7 +73,7 @@
 			</ul>
 		</nav>
 		<nav>
-			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 9</span>
+			<span style="color: grey;font-weight:bold;font-family: fantasy;">总文章数 10</span>
 		</nav>
 		<nav class="header-smart-menu">
     		
@@ -186,14 +186,14 @@
             
 
 
-<article id="post-T31：DAY01" class="article article-type-post " itemscope itemprop="blogPost">
+<article id="post-孤尽T31：DAY02-数据库规约" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      孤尽T31：DAY01架构设计
+      孤尽T31：DAY02-数据库规约
     </h1>
   
 
@@ -208,92 +208,69 @@
   </a>
   
         
-        <a href="/2021/10/28/T31%EF%BC%9ADAY01/" class="archive-article-date">
-  	<time datetime="2021-10-27T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-28</time>
+        <a href="/2021/10/29/%E5%AD%A4%E5%B0%BDT31%EF%BC%9ADAY02-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E7%BA%A6/" class="archive-article-date">
+  	<time datetime="2021-10-28T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>&emsp;&emsp;这节课主要学习的是如何从架构的角度去看待项目，其中包含了七大设计原则，简单总结一下。</p>
+        <p>&emsp;&emsp;这节课主要学习的是数据库相关的规约，其中包括了建表规约，索引规约等，简单总结一下。</p>
 <a id="more"></a>
 
-<h1 id="七大设计原则"><a href="#七大设计原则" class="headerlink" title="七大设计原则"></a>七大设计原则</h1><p>&emsp;&emsp;设计原则的目的是提升软件的<strong>可扩展性，可维护性</strong>，是抽象与归纳思维的集中体现。这七个是<strong>开闭原则、里氏代换原则、迪米特原则（最少知道原则）、单一职责原则、接口分隔原则、依赖倒置原则、组合/聚合复用原则</strong>。</p>
-<h2 id="七大设计原则之间的关系"><a href="#七大设计原则之间的关系" class="headerlink" title="七大设计原则之间的关系"></a>七大设计原则之间的关系</h2><p>&emsp;&emsp;七大原则之间并不是相互孤立的，彼此间存在着一定关联，一个可以是另一个原则的加强或是基础。违反其中的某一个，可能同时违反了其余的原则。</p>
-<p>&emsp;&emsp;开闭原则是面向对象的可复用设计的基石。其他设计原则是实现开闭原则的手段和工具。</p>
-<p>一般地，可以把这七个原则分成了以下两个部分：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">设计目标：开闭原则、里氏代换原则、迪米特原则</span><br><span class="line">设计方法：单一职责原则、接口分隔原则、依赖倒置原则、组合&#x2F;聚合复用原则</span><br></pre></td></tr></table></figure>
-<h2 id="开闭原则"><a href="#开闭原则" class="headerlink" title="开闭原则"></a>开闭原则</h2><blockquote>
-<p>软件实体（模块，类，方法等）应该<strong>对扩展开放，对修改关闭</strong>。</p>
-</blockquote>
-<p>&emsp;&emsp;扩展能力主要是对需求继续变化的适应能力，根据开闭原则，在设计一个软件系统模块（类，方法）的时候，<strong>应该可以在不修改原有的模块（修改关闭）的基础上，能扩展其功能（扩展开放）</strong>。</p>
-<p>&emsp;&emsp;对于修改关闭，可以这样理解：某模块被其他模块调用，如果该模块的源代码不允许修改，则该模块修改关闭的。软件系统的<strong>功能上的稳定性，持续性要求模块是修改关闭的</strong>。</p>
-<blockquote>
-<p>架构师最大的难点：识别和隔离出变化点</p>
-</blockquote>
-<h2 id="里氏替换原则"><a href="#里氏替换原则" class="headerlink" title="里氏替换原则"></a>里氏替换原则</h2><blockquote>
-<p>所有引用基类的地方必须能透明地使用其派生类的对象。</p>
-</blockquote>
-<p>也就是说，只有满足以下2个条件的OO设计才可被认为是满足了里氏替换原则：</p>
+<p>&emsp;&emsp;在一个团队中，每个人都遵循一套相同的规约，是很利于队内沟通的，所以规约是非常有必要的。</p>
+<h1 id="建表规约"><a href="#建表规约" class="headerlink" title="建表规约"></a>建表规约</h1><p>&emsp;&emsp;首先是表、字段的命名</p>
 <ul>
-<li>不应该在代码中出现if/else之类对派生类类型进行判断的条件。</li>
-<li>派生类应当可以替换基类并出现在基类能够出现的任何地方，或者说如果我们把代码中使用基类的地方用它的派生类所代替，代码还能正常工作。</li>
+<li>必须使用小写字母或者数字，其中不能数字开头</li>
+<li>单词之间要用下划线_隔开，而且下划线之间不能只出现数字，如xxx_2_xxx</li>
+<li>不能出现复数名词</li>
+<li>不能使用保留字</li>
+<li>布尔类型概念的字段，即是与否的概念字段，必须使用is_xxx的方式命名</li>
 </ul>
-<p>&emsp;&emsp;里氏替换原则是使代码符合开闭原则的一个重要保证。</p>
-<p>同时里氏替换原则体现了:</p>
+<p>&emsp;&emsp;数据类型</p>
 <ul>
-<li><p>类的继承原则：如果一个派生类的对象可能会在基类出现的地方出现运行错误，则该派生类不应该从该基类继承，或者说，应该重新设计它们之间的关系。</p>
-</li>
-<li><p>动作正确性保证：从另一个侧面上保证了符合里氏替换设计原则的类的扩展不会给已有的系统引入新的错误。</p>
-</li>
+<li>小数类型为decimal</li>
+<li>货币数据使用最小货币单位，数据类型为bigint，如人民币，则以“分”为单位，这样可以避免浮点运算</li>
+<li>字符串长度近似相等使用char，不等使用varchar。varchar长度不要超过5000</li>
 </ul>
-<p>里式替换原则的引申意义：子类可以扩展父类的功能，但不能改变父类原有的功能。</p>
-<h2 id="迪米特原则（最少知道原则）"><a href="#迪米特原则（最少知道原则）" class="headerlink" title="迪米特原则（最少知道原则）"></a>迪米特原则（最少知道原则）</h2><blockquote>
-<p>迪米特原则（Law of Demeter）又叫最少知道原则（Least Knowledge Principle），可以简单说成：talk only to your immediate friends，只与你直接的朋友们通信，不要跟“陌生人”说话。</p>
-</blockquote>
+<p>&emsp;&emsp;表必备的字段</p>
 <ul>
-<li><p>1）一个软件实体应当尽可能少地与其他实体发生相互作用。</p>
-</li>
-<li><p>2）每一个软件单位对其他的单位都只有最少的知识，而且局限于那些与本单位密切相关的软件单位。</p>
-</li>
+<li>id</li>
+<li>create_time</li>
+<li>update_time</li>
 </ul>
-<h2 id="单一职责原则"><a href="#单一职责原则" class="headerlink" title="单一职责原则"></a>单一职责原则</h2><blockquote>
-<p>永远不要让一个类存在多个改变的理由。</p>
-</blockquote>
-<p>&emsp;&emsp;换句话说，如果一个类需要改变，改变它的理由永远只有一个。如果存在多个改变它的理由，就需要重新设计该类。</p>
-<p>&emsp;&emsp;单一职责原则原则的核心含意是：只能让一个类/接口/方法有且仅有一个职责。</p>
-<h2 id="接口分隔原则"><a href="#接口分隔原则" class="headerlink" title="接口分隔原则"></a>接口分隔原则</h2><blockquote>
-<p>不能强迫用户去依赖那些他们不使用的接口。</p>
-</blockquote>
-<p>&emsp;&emsp;换句话说，使用多个专门的接口比使用单一的总接口总要好。</p>
-<p>它包含了2层意思：</p>
+<p>&emsp;&emsp;一些经验规约</p>
 <ul>
-<li><p>接口的设计原则：接口的设计应该遵循最小接口原则，不要把用户不使用的方法塞进同一个接口里。如果一个接口的方法没有被使用到，则说明该接口过胖，应该将其分割成几个功能专一的接口。</p>
-</li>
-<li><p>接口的依赖（继承）原则：如果一个接口a继承另一个接口b，则接口a相当于继承了接口b的方法，那么继承了接口b后的接口a也应该遵循上述原则：不应该包含用户不使用的方法。 反之，则说明接口a被b给污染了，应该重新设计它们的关系。</p>
-</li>
+<li>表命名最好遵循“业务名称_表的作用”</li>
+<li>库名和应用名称尽量一致</li>
+<li>如果修改字段含义或者追加状态，需要及时更新字段注释</li>
+<li>字段允许适当冗余，以提高查询性能，但必须考虑数据一致性</li>
+<li>单表数据行数超过500万，或者单表容量超2GB。才推荐分库分表</li>
 </ul>
-<p>&emsp;&emsp;如果用户被迫依赖他们不使用的接口，当接口发生改变时，他们也不得不跟着改变。换而言之，一个用户依赖了未使用但被其他用户使用的接口，当其他用户修改该接口时，依赖该接口的所有用户都将受到影响。这显然违反了开闭原则，也不是我们所期望的。</p>
-<p>总而言之，接口分隔原则指导我们：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.一个类对一个类的依赖应该建立在最小的接口上</span><br><span class="line"></span><br><span class="line">2.建立单一接口，不要建立庞大臃肿的接口</span><br><span class="line"></span><br><span class="line">3.尽量细化接口，接口中的方法尽量少</span><br></pre></td></tr></table></figure>
-<h2 id="依赖倒置原则"><a href="#依赖倒置原则" class="headerlink" title="依赖倒置原则"></a>依赖倒置原则</h2><blockquote>
-<p>A. 高层模块不应该依赖于低层模块，二者都应该依赖于抽象</p>
-</blockquote>
-<blockquote>
-<p>B. 抽象不应该依赖于细节，细节应该依赖于抽象 </p>
-</blockquote>
-<blockquote>
-<p>C.针对接口编程，不要针对实现编程。</p>
-</blockquote>
-<h2 id="组合-聚合复用原则"><a href="#组合-聚合复用原则" class="headerlink" title="组合/聚合复用原则"></a>组合/聚合复用原则</h2><p>在面向对象设计中，有两种基本的办法可以实现复用：第一种是通过组合/聚合，第二种就是通过继承。</p>
-<blockquote>
-<p>组合/聚合复用原则：尽量使用组合/聚合，不要使用类继承。</p>
-</blockquote>
-<p>&emsp;&emsp;即在一个新的对象里面使用一些已有的对象，使之成为新对象的一部分，新对象通过向这些对象的委派达到复用已有功能的目的。就是说要尽量的使用合成和聚合，而不是继承关系达到复用的目的。</p>
-<p>&emsp;&emsp;组合和聚合都是关联的特殊种类。聚合表示整体和部分的关系，表示“拥有”。组合则是一种更强的“拥有”，部分和整体的生命周期一样。</p>
-<p>&emsp;&emsp;组合的新的对象完全支配其组成部分，包括它们的创建和湮灭等。一个组合关系的成分对象是不能与另一个组合关系共享的。</p>
-<p>&emsp;&emsp;组合是值的聚合（Aggregation by Value），而一般说的聚合是引用的聚合（Aggregation by Reference）。</p>
+<h1 id="索引规约"><a href="#索引规约" class="headerlink" title="索引规约"></a>索引规约</h1><p>&emsp;&emsp;在innodb下，索引的数据结构是B+树</p>
+<p>索引在不同维度的衡量标准下，分为4种分类。</p>
+<ul>
+<li>存储形式： 聚簇索引，非据此索引</li>
+<li>数据约束： 主键索引，唯一索引，非唯一索引（普通索引）</li>
+<li>索引列的数量：单列索引，组合索引</li>
+<li>innoDB可创建的： 主键索引，唯一索引，普通索引</li>
+</ul>
+<p>索引相关的规约</p>
+<p>&emsp;&emsp;索引命名</p>
+<ul>
+<li>主键索引名为pk_字段名</li>
+<li>唯一索引名为uk_字段名</li>
+<li>普通索引名为idx_字段名</li>
+</ul>
+<p>&emsp;&emsp;创建索引规约</p>
+<ul>
+<li>有唯一特性的字段必须建成唯一索引</li>
+<li>在varchar字段上建立索引时，必须指定索引长度</li>
+<li>建立组合索引时，区分度最高的在最左边</li>
+</ul>
+<p>&emsp;&emsp;说一下覆盖索引</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">覆盖索引是一种效果，而不是某种索引的建立方式。</span><br><span class="line">覆盖索引的成立条件：当建立的组合索引中的索引字段，全部包含了该sql的查询字段，则认为该sql利用到了覆盖索引。</span><br><span class="line">覆盖索引的原理：因为每个索引建立都是对应的课B+树，而组合索引的B+树会涵盖所有索引列，如果利用到了覆盖索引，则只需要在该组合索引树上就可完成查询，无需到主键树上回表查询，节省了一次回表的开销。</span><br></pre></td></tr></table></figure>
 
       
 
@@ -394,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/10/28/T31%EF%BC%9ADAY01/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://jingfeng999.github.io/ithub.io/2021/10/29/%E5%AD%A4%E5%B0%BDT31%EF%BC%9ADAY02-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%84%E7%BA%A6/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -410,8 +387,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2021/07/21/%E7%BD%91%E7%BB%9C%EF%BC%9Aping%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">网络：ping的工作原理</div>
+    <a href="/2021/10/28/%E5%AD%A4%E5%B0%BDT31%EF%BC%9ADAY01-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">孤尽T31：DAY01-架构设计</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -438,7 +415,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E5%A4%A7%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99"><span class="toc-number">1.</span> <span class="toc-text">七大设计原则</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E5%A4%A7%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">1.1.</span> <span class="toc-text">七大设计原则之间的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99"><span class="toc-number">1.2.</span> <span class="toc-text">开闭原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99"><span class="toc-number">1.3.</span> <span class="toc-text">里氏替换原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%AA%E7%B1%B3%E7%89%B9%E5%8E%9F%E5%88%99%EF%BC%88%E6%9C%80%E5%B0%91%E7%9F%A5%E9%81%93%E5%8E%9F%E5%88%99%EF%BC%89"><span class="toc-number">1.4.</span> <span class="toc-text">迪米特原则（最少知道原则）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99"><span class="toc-number">1.5.</span> <span class="toc-text">单一职责原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E5%88%86%E9%9A%94%E5%8E%9F%E5%88%99"><span class="toc-number">1.6.</span> <span class="toc-text">接口分隔原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%9D%E8%B5%96%E5%80%92%E7%BD%AE%E5%8E%9F%E5%88%99"><span class="toc-number">1.7.</span> <span class="toc-text">依赖倒置原则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88-%E8%81%9A%E5%90%88%E5%A4%8D%E7%94%A8%E5%8E%9F%E5%88%99"><span class="toc-number">1.8.</span> <span class="toc-text">组合&#x2F;聚合复用原则</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BB%BA%E8%A1%A8%E8%A7%84%E7%BA%A6"><span class="toc-number">1.</span> <span class="toc-text">建表规约</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B4%A2%E5%BC%95%E8%A7%84%E7%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">索引规约</span></a></li></ol>
                     </div>
                 </span>
             </div>
